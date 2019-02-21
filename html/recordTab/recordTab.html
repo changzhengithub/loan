@@ -33,7 +33,7 @@
             <p class="tip-text">审核通过</p>
           </div>
           <div class="tag-btn">
-            <p class="btn-text">查看详情</p>
+            <p class="btn-text" tapmode onclick="gotoPage('iou-detail');">查看详情</p>
             <div class="btn-img">
               <img src="../../image/mine/arrow.png">
             </div>
@@ -141,7 +141,24 @@
             console.log(ret.value.id);
         });
       }
-
+      function gotoPage(page) {
+        api.openFrame({
+            name: page,
+            url: '../' + page + '/' + page + '.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            animation: {
+              type: "push",
+              subType: "from_right",
+              duration: 300
+            },
+            bounces: false
+        });
+      }
     </script>
 </body>
 

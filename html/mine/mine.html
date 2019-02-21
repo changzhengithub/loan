@@ -43,7 +43,7 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item" tapmode onclick="gotoPage();">
+              <li class="list-item" tapmode onclick="gotoPage('iou-record');">
                 <div class="item-icon">
                   <img src="../../image/mine/note.png">
                 </div>
@@ -65,7 +65,7 @@
                   </div>
                 </div>
               </li>
-              <li class="list-item">
+              <li class="list-item" tapmode onclick="gotoPage('help-center');">
                 <div class="item-icon">
                   <img src="../../image/mine/question.png">
                 </div>
@@ -98,10 +98,10 @@
         apiready = function() {
 
         };
-        function gotoPage() {
+        function gotoPage(page) {
           api.openFrame({
-              name: 'add-contact',
-              url: '../add-contact/add-contact.html',
+              name: page,
+              url: '../' + page + '/' + page + '.html',
               rect: {
                   x: 0,
                   y: 0,
