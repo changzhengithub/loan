@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>我的</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/mine/mine.css">
+</head>
+
+<body>
+    <section class="mine">
+        <header class="mine-header"></header>
+        <div class="mine-main">
+            <!-- 头部个人信息 -->
+            <div class="main-head">
+              <div class="head-portrait">
+                <img src="../../image/mine/portrait.png">
+              </div>
+              <p class="head-tel">185****1392</p>
+              <div class="head-progress">
+                <div class="progress-container">
+                  <div class="container-bar" id="bar"></div>
+                </div>
+                <div class="progress-text">
+                  <p class="text-title">信用分</p>
+                  <p class="text-score"><span id="score">500</span><span>&nbsp;/&nbsp;1000</span></p>
+                </div>
+              </div>
+            </div>
+            <ul class="main-list">
+              <li class="list-item">
+                <div class="item-icon">
+                  <img src="../../image/mine/card.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-text">近期待还</p>
+                  <div class="detail-arrow">
+                    <img src="../../image/mine/arrow.png">
+                  </div>
+                </div>
+              </li>
+              <li class="list-item" tapmode onclick="gotoPage();">
+                <div class="item-icon">
+                  <img src="../../image/mine/note.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-text">借款记录</p>
+                  <div class="detail-arrow">
+                    <img src="../../image/mine/arrow.png">
+                  </div>
+                </div>
+              </li>
+              <li class="list-item">
+                <div class="item-icon">
+                  <img src="../../image/mine/faq.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-text">意见反馈</p>
+                  <div class="detail-arrow">
+                    <img src="../../image/mine/arrow.png">
+                  </div>
+                </div>
+              </li>
+              <li class="list-item">
+                <div class="item-icon">
+                  <img src="../../image/mine/question.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-text">常见问题</p>
+                  <div class="detail-arrow">
+                    <img src="../../image/mine/arrow.png">
+                  </div>
+                </div>
+              </li>
+              <li class="list-item">
+                <div class="item-icon">
+                  <img src="../../image/mine/costomer.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-text">联系客服</p>
+                  <div class="detail-arrow">
+                    <img src="../../image/mine/arrow.png">
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="main-exit">
+              <button class="exit-btn">退出登录</button>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        apiready = function() {
+
+        };
+        function gotoPage() {
+          api.openFrame({
+              name: 'add-contact',
+              url: '../add-contact/add-contact.html',
+              rect: {
+                  x: 0,
+                  y: 0,
+                  w: 'auto',
+                  h: 'auto'
+              },
+              animation: {
+                type: "push",
+                subType: "from_right",
+                duration: 300
+              },
+              bounces: false
+          });
+        }
+    </script>
+</body>
+
+</html>

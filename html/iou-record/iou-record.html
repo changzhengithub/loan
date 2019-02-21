@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>借款记录</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/iou-record/iou-record.css">
+</head>
+
+<body>
+    <section class="record" id="record">
+        <header class="record-header" id="header">
+            <div class="header-back" onclick="goBack();">
+                <img src="../../image/back.png" alt="back">
+            </div>
+            <p class="header-title">借款记录</p>
+            <div id="navbar" class="header-navbar">
+                <div tapmode class="navbar-item active" onclick="toggleTab(this);">全部</div>
+                <div tapmode class="navbar-item" onclick="toggleTab(this);">待还款</div>
+                <div tapmode class="navbar-item" onclick="toggleTab(this);">已还款</div>
+                <div tapmode class="navbar-item" onclick="toggleTab(this);">已逾期</div>
+            </div>
+        </header>
+        <main class="record-main">
+            <div id="container" class="main-cotainer">
+                <div class="container-tab">
+                    <!-- 要切换的内容 -->
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script type="text/javascript">
+        apiready = function() {
+          var head = $api.byId('header');
+          var navItem = $api.domAll('.navbar-item');
+          var frames = [];
+          for (var i = 0, len = navItem.length; i < len; i++) {
+              frames.push({
+                  name: 'tabFrame' + i,
+                  url: '../recordTab/recordTab.html',
+                  pageParam: {
+                      id: i
+                  },
+                  bounces: false
+              })
+          }
+          var container = $api.byId('container');
+          $api.css(container, 'height:' + api.frameHeight - head.clientHeight + 'px');
+
+          api.openFrameGroup({
+            name: 'recordTab',
+            scrollEnabled: true,
+            rect: {
+              x: 0,
+              y: head.clientHeight,
+              w: 'auto',
+              h: api.frameHeight - head.clientHeight
+            },
+            index: 0,
+            frames: frames
+          }, function(ret, err) {
+            var navItem = $api.domAll('.navbar-item');
+            for (var i = 0; i < navItem.length; i++) {
+              $api.removeCls(navItem[i], 'active');
+            }
+            $api.addCls(navItem[ret.index], 'active');
+            // 切换导航栏传递参数
+            api.sendEvent({
+              name: 'tabIndex',
+              extra: {
+                id: ret.index
+              }
+            });
+          });
+        }
+
+        function goBack() {
+          api.closeFrame({
+            name: 'iou-record'
+          });
+          api.closeFrameGroup({
+            name: 'recordTab'
+          });
+        }
+
+        // 点击导航栏切换状态
+        function toggleTab(tag) {
+            if (tag == $api.dom('#navbar div.active')) return;
+            var navItem = $api.domAll('.navbar-item');
+            index = 0;
+            for (var i = 0, len = navItem.length; i < len; i++) {
+                if (tag == navItem[i]) {
+                    index = i;
+                } else {
+                    $api.removeCls(navItem[i], 'active');
+                }
+            }
+            $api.addCls(navItem[index], 'active');
+            api.setFrameGroupIndex({
+                name: 'openScoreTab',
+                index: index
+            });
+        }
+    </script>
+</body>
+
+</html>

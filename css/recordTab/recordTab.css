@@ -1,0 +1,313 @@
+@charset "UTF-8";
+/*
+项目采用采用淘宝flexible.js来进行页面适配，flexible.js会根据手机的dpr来配置页面跟元素的字体大小，然后采用rem来进行适配。
+根据设计图的十分之一来确定元素为多少rem     x  =  量取实际尺寸 / 页面宽度的十分之一  *  1rem
+$unit设置为设计图的十分之一，宽高通过设计图的实际宽高除以 $unit * 1rem计算出为多少REM,
+这样无论屏幕怎么变化只需得到HTML的font-size值(flexible会自动变换fontsize值)乘以REM就是变化后的宽高；
+ flexible根据dpr的不同来设置字体大小，引入时传入1dpr的字体大小，设计图大小 / 2
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ol,
+ul,
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: none; }
+
+button,
+input {
+  outline: none;
+  border: none;
+  background: none; }
+
+[v-cloak] {
+  display: none; }
+
+.recordTab {
+  width: 100%;
+  height: 100%;
+  padding-top: 0.4rem;
+  padding-left: 0.2666666667rem;
+  padding-right: 0.2666666667rem;
+  background: #FAFAFA; }
+  .recordTab .recordTab-item {
+    position: relative;
+    width: 100%;
+    height: 3.9466666667rem;
+    margin-bottom: 0.4rem; }
+    .recordTab .recordTab-item .item-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%; }
+      .recordTab .recordTab-item .item-bg img {
+        width: 100%;
+        height: 100%; }
+    .recordTab .recordTab-item .item-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%; }
+      .recordTab .recordTab-item .item-container .container-info {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        justify-content: space-between;
+        -webkit-box-pack: space-between;
+        -webkit-justify-content: space-between;
+        width: 100%;
+        height: 2.1333333333rem;
+        padding-top: 0.4666666667rem;
+        padding-left: 0.6666666667rem;
+        padding-right: 0.5333333333rem; }
+        .recordTab .recordTab-item .item-container .container-info .info-leftside .leftside-title {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          height: 0.56rem;
+          font-size: 17px;
+          font-weight: 700;
+          color: #333; }
+          [data-dpr="2"] .recordTab .recordTab-item .item-container .container-info .info-leftside .leftside-title {
+            font-size: 34px; }
+          [data-dpr="3"] .recordTab .recordTab-item .item-container .container-info .info-leftside .leftside-title {
+            font-size: 51px; }
+        .recordTab .recordTab-item .item-container .container-info .info-leftside .leftside-time {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          height: 0.5066666667rem;
+          font-size: 12px;
+          font-weight: 500;
+          color: #999; }
+          [data-dpr="2"] .recordTab .recordTab-item .item-container .container-info .info-leftside .leftside-time {
+            font-size: 24px; }
+          [data-dpr="3"] .recordTab .recordTab-item .item-container .container-info .info-leftside .leftside-time {
+            font-size: 36px; }
+        .recordTab .recordTab-item .item-container .container-info .info-rightside {
+          font-weight: 700; }
+          .recordTab .recordTab-item .item-container .container-info .info-rightside span:first-of-type {
+            font-size: 15px; }
+            [data-dpr="2"] .recordTab .recordTab-item .item-container .container-info .info-rightside span:first-of-type {
+              font-size: 30px; }
+            [data-dpr="3"] .recordTab .recordTab-item .item-container .container-info .info-rightside span:first-of-type {
+              font-size: 45px; }
+          .recordTab .recordTab-item .item-container .container-info .info-rightside span:last-of-type {
+            font-size: 30px; }
+            [data-dpr="2"] .recordTab .recordTab-item .item-container .container-info .info-rightside span:last-of-type {
+              font-size: 60px; }
+            [data-dpr="3"] .recordTab .recordTab-item .item-container .container-info .info-rightside span:last-of-type {
+              font-size: 90px; }
+        .recordTab .recordTab-item .item-container .container-info .succeed {
+          color: #F5841F; }
+        .recordTab .recordTab-item .item-container .container-info .fail {
+          color: #999; }
+      .recordTab .recordTab-item .item-container .container-tag {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        justify-content: space-between;
+        -webkit-box-pack: space-between;
+        -webkit-justify-content: space-between;
+        width: 100%;
+        height: 1.3333333333rem;
+        padding-left: 0.6rem;
+        padding-right: 0.4666666667rem; }
+        .recordTab .recordTab-item .item-container .container-tag .tag-tip {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center; }
+          .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img {
+            width: 0.5333333333rem;
+            height: 0.5333333333rem; }
+            .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img img {
+              width: 100%;
+              height: 100%; }
+          .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-text {
+            margin-left: 0.2666666667rem;
+            font-size: 12px;
+            font-weight: 700;
+            color: #333; }
+            [data-dpr="2"] .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-text {
+              font-size: 24px; }
+            [data-dpr="3"] .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-text {
+              font-size: 36px; }
+        .recordTab .recordTab-item .item-container .container-tag .tag-btn {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center; }
+          .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-img {
+            width: 0.5333333333rem;
+            height: 0.5333333333rem; }
+            .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-img img {
+              width: 100%;
+              height: 100%; }
+          .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-text {
+            margin-right: 0.2rem;
+            font-size: 12px;
+            font-weight: 500;
+            color: #999; }
+            [data-dpr="2"] .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-text {
+              font-size: 24px; }
+            [data-dpr="3"] .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-text {
+              font-size: 36px; }
+  .recordTab .recordTab-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    padding-bottom: 0.2rem;
+    background: #f0f0f0;
+    overflow-y: auto; }
+    .recordTab .recordTab-container .container-subsection {
+      width: 100%; }
+      .recordTab .recordTab-container .container-subsection .subsection-time {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        width: 100%; }
+        .recordTab .recordTab-container .container-subsection .subsection-time span {
+          font-size: 12px;
+          color: #8e8e8e;
+          margin-left: 0.0666666667rem;
+          margin-right: 0.0666666667rem; }
+          [data-dpr="2"] .recordTab .recordTab-container .container-subsection .subsection-time span {
+            font-size: 24px; }
+          [data-dpr="3"] .recordTab .recordTab-container .container-subsection .subsection-time span {
+            font-size: 36px; }
+      .recordTab .recordTab-container .container-subsection .subsection-list {
+        width: 100%; }
+        .recordTab .recordTab-container .container-subsection .subsection-list .list-item {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          width: 100%;
+          height: 1.2rem;
+          padding-left: 0.2rem;
+          padding-right: 1.4rem;
+          background-color: #fff;
+          border-bottom: 1px solid #f0f0f0; }
+          .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            flex-direction: column;
+            -webkit-flex-direction: column;
+            justify-content: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            align-items: center;
+            align-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -webkit-align-content: center;
+            width: 1.4rem;
+            height: 100%;
+            padding-top: 0.0666666667rem; }
+            .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-top {
+              font-size: 10px;
+              color: #444444; }
+              [data-dpr="2"] .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-top {
+                font-size: 20px; }
+              [data-dpr="3"] .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-top {
+                font-size: 30px; }
+            .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-name {
+              display: flex;
+              display: -webkit-box;
+              display: -webkit-flex;
+              align-items: center;
+              align-content: center;
+              -webkit-box-align: center;
+              -webkit-align-items: center;
+              -webkit-align-content: center;
+              height: 0.4rem;
+              font-size: 12px;
+              color: #fdcf00; }
+              [data-dpr="2"] .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-name {
+                font-size: 24px; }
+              [data-dpr="3"] .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-name {
+                font-size: 36px; }
+            .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-time {
+              font-size: 10px;
+              color: #444444; }
+              [data-dpr="2"] .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-time {
+                font-size: 20px; }
+              [data-dpr="3"] .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-detail .detail-time {
+                font-size: 30px; }
+          .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-team {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            align-items: center;
+            align-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -webkit-align-content: center;
+            justify-content: space-between;
+            -webkit-box-pack: space-between;
+            -webkit-justify-content: space-between;
+            height: 100%;
+            padding-left: 0.2rem;
+            padding-right: 0.2rem; }
+            .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-team span {
+              font-size: 15px;
+              color: #444444;
+              font-weight: bold; }
+              [data-dpr="2"] .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-team span {
+                font-size: 30px; }
+              [data-dpr="3"] .recordTab .recordTab-container .container-subsection .subsection-list .list-item .item-team span {
+                font-size: 45px; }
+
+/*# sourceMappingURL=recordTab.css.map */

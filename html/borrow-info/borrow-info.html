@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>借款信息</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/borrow-info/borrow-info.css">
+</head>
+
+<body>
+    <section class="borrow" id="borrow">
+        <header class="borrow-header">
+            <div class="header-back" onclick="goBack();">
+                <img src="../../image/back.png" alt="back">
+            </div>
+            <p class="header-title"></p>
+            <div class="header-detail">
+                <div class="detail-item">
+                    <p class="item-num">1500</p>
+                    <p class="item-title">借款金额(元)</p>
+                </div>
+                <div class="detail-item">
+                    <p class="item-num">10</p>
+                    <p class="item-title">借款期限(天）</p>
+                </div>
+            </div>
+        </header>
+        <div class="borrow-main">
+            <div class="main-borrow">
+                <div class="borrow-title">
+                    <div class="title-img">
+                        <img src="../../image/borrow.png">
+                    </div>
+                    <p class="title-text">借款信息</p>
+                </div>
+                <div class="borrow-detail">
+                    <div class="detail-account">
+                        <p class="account-title">到账金额</p>
+                        <div class="account-slide"><span>1080元</span></div>
+                    </div>
+                    <div class="detail-bank">
+                        <p class="bank-title">到账银行卡</p>
+                        <div class="bank-slide">
+                            <div class="slide-img">
+                                <img src="../../image/bank.png">
+                            </div>
+                            <p class="slide-text"><span>中国银行储蓄卡</span><span>(尾号:888）</span></p>
+                            <div class="slide-arrow">
+                                <img src="../../image/mine/arrow.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-total">
+                        <p class="total-title">综合费用</p>
+                        <div class="total-slide"><span>420元</span><span tapmode onclick="openDetail(this);">展开详情</span></div>
+                    </div>
+                    <!-- 隐藏的详情 -->
+                    <div class="detail-info" id="detail">
+                      <div class="info-item">
+                        <p class="item-title">利息</p>
+                        <p class="item-text">0元</p>
+                      </div>
+                      <div class="info-item">
+                        <p class="item-title">快速信审费</p>
+                        <p class="item-text">168.0元</p>
+                      </div>
+                      <div class="info-item">
+                        <p class="item-title">风险准备金</p>
+                        <p class="item-text">252元</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-laon">
+              <div class="laon-title">
+                  <div class="title-img">
+                      <img src="../../image/loan.png">
+                  </div>
+                  <p class="title-text">还款信息</p>
+              </div>
+              <div class="laon-detail">
+                  <div class="detail-account">
+                      <p class="account-title">合计应还金额</p>
+                      <div class="account-slide"><span>1500元</span></div>
+                  </div>
+              </div>
+            </div>
+            <div class="main-protocol">
+                <div class="protocol-select">
+                  <img src="../../image/pass.png">
+                  <img style="display: none" src="../../image/fail.png">
+                </div>
+                <p class="protocol-text"><span>我阅读并同意 </span><span class="protocol">《平台服务协议》</span><span>、</span><span class="protocol">《授权扣款委托书》</span></p>
+            </div>
+            <div class="main-submit">
+                <button class="submit-btn" tapmode onclick="openToast();">确认提交</button>
+            </div>
+            <div class="main-tips">
+              <p class="tips-item"><span>提前还款：</span></p>
+              <p class="tips-item"><span>单期提前还款：</span><span class="item-detail">提前还款费用不减免</span></p>
+              <p class="tips-item"><span>逾期政策：</span></p>
+              <p class="tips-item"><span class="item-detail">信审费(借条本金*4%) + 借款金额 * 2.5% * 逾期天数，25%封顶</span></p>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var onOff = false;
+        apiready = function() {
+          var borrow = $api.byId('borrow');
+          $api.css(borrow, 'height:'+ api.winHeight + 'px');
+        };
+
+        function openDetail(self) {
+          var detail = $api.byId('detail');
+          if (!onOff) {
+            self.innerText = '收起详情'
+            $api.css(detail, 'display: block');
+            onOff = true;
+          } else {
+            self.innerText = '展开详情'
+            $api.css(detail, 'display: none');
+            onOff = false;
+          }
+        }
+
+
+
+        function openToast() {
+          api.openFrame({
+              name: 'toast',
+              url: '../borrow-toast/borrow-toast.html',
+              rect: {
+                  x: 0,
+                  y: 0,
+                  w: 'auto',
+                  h: 'auto'
+              },
+              animation: {
+                type: "push",
+                subType: "from_bottom",
+                duration: 300
+              },
+              bounces: false
+          });
+        }
+
+        function goBack() {
+          api.closeFrame({
+            name: 'iou-detail'
+          });
+        }
+    </script>
+</body>
+
+</html>

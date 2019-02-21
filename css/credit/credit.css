@@ -1,0 +1,279 @@
+@charset "UTF-8";
+/*
+项目采用采用淘宝flexible.js来进行页面适配，flexible.js会根据手机的dpr来配置页面跟元素的字体大小，然后采用rem来进行适配。
+根据设计图的十分之一来确定元素为多少rem     x  =  量取实际尺寸 / 页面宽度的十分之一  *  1rem
+$unit设置为设计图的十分之一，宽高通过设计图的实际宽高除以 $unit * 1rem计算出为多少REM,
+这样无论屏幕怎么变化只需得到HTML的font-size值(flexible会自动变换fontsize值)乘以REM就是变化后的宽高；
+ flexible根据dpr的不同来设置字体大小，引入时传入1dpr的字体大小，设计图大小 / 2
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ol,
+ul,
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: none; }
+
+button,
+input {
+  outline: none;
+  border: none;
+  background: none; }
+
+[v-cloak] {
+  display: none; }
+
+@font-face {
+  font-family: Condensed;
+  src: url("../DIN-Condensed-Bold.ttf"); }
+.credit {
+  width: 100%;
+  height: 100%; }
+  .credit-header {
+    width: 100%;
+    height: 4.5466666667rem;
+    padding-top: 0.56rem;
+    background-color: #FB9C27; }
+    .credit-header .header-title {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      align-items: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -webkit-align-content: center;
+      justify-content: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      width: 100%;
+      height: 0.9333333333rem;
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff; }
+      [data-dpr="2"] .credit-header .header-title {
+        font-size: 34px; }
+      [data-dpr="3"] .credit-header .header-title {
+        font-size: 51px; }
+    .credit-header .header-tip {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      align-items: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -webkit-align-content: center;
+      width: 100%;
+      height: 0.9333333333rem;
+      padding-left: 0.8rem;
+      margin-top: 0.52rem;
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff; }
+      [data-dpr="2"] .credit-header .header-tip {
+        font-size: 34px; }
+      [data-dpr="3"] .credit-header .header-tip {
+        font-size: 51px; }
+  .credit-main {
+    position: relative;
+    width: 100%;
+    margin-top: -1.5333333333rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem; }
+    .credit-main .main-head {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      align-items: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -webkit-align-content: center;
+      width: 100%;
+      height: 3.3333333333rem;
+      padding-right: 0.7333333333rem;
+      background-color: #fff;
+      box-shadow: 0 0.04rem 0.0666666667rem 0 rgba(114, 114, 114, 0.18);
+      border-radius: 0.2133333333rem; }
+      .credit-main .main-head .head-detail {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        flex-direction: column;
+        -webkit-flex-direction: column;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        height: 100%; }
+        .credit-main .main-head .head-detail .detail-tel {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          width: 100%;
+          height: 1.04rem;
+          padding-left: 0.4266666667rem;
+          font-size: 24px;
+          font-weight: 700;
+          color: #333; }
+          [data-dpr="2"] .credit-main .main-head .head-detail .detail-tel {
+            font-size: 48px; }
+          [data-dpr="3"] .credit-main .main-head .head-detail .detail-tel {
+            font-size: 72px; }
+        .credit-main .main-head .head-detail .detail-credit {
+          width: 100%; }
+          .credit-main .main-head .head-detail .detail-credit img {
+            width: 1.3333333333rem;
+            height: 0.4533333333rem;
+            margin-left: 0.5066666667rem; }
+      .credit-main .main-head .head-progress {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        width: 2.6666666667rem;
+        height: 2.6666666667rem; }
+        .credit-main .main-head .head-progress .progress-value {
+          margin-top: 0.2666666667rem;
+          font-family: Condensed;
+          font-size: 40px;
+          font-weight: 700;
+          color: #FF9007; }
+          [data-dpr="2"] .credit-main .main-head .head-progress .progress-value {
+            font-size: 80px; }
+          [data-dpr="3"] .credit-main .main-head .head-progress .progress-value {
+            font-size: 120px; }
+    .credit-main .mian-progress {
+      width: 100%;
+      margin-top: 0.52rem; }
+      .credit-main .mian-progress .progress-step {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        width: 100%;
+        height: 2rem;
+        padding-left: 0.32rem;
+        padding-right: 0.32rem;
+        margin-bottom: 0.2933333333rem;
+        background-color: #fff;
+        box-shadow: 0 0.04rem 0.0666666667rem 0 rgba(114, 114, 114, 0.18);
+        border-radius: 0.2133333333rem; }
+        .credit-main .mian-progress .progress-step .step-icon {
+          width: 1.0666666667rem;
+          height: 1.0666666667rem; }
+          .credit-main .mian-progress .progress-step .step-icon img {
+            width: 100%;
+            height: 100%; }
+        .credit-main .mian-progress .progress-step .step-detail {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          flex-direction: column;
+          -webkit-flex-direction: column;
+          justify-content: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          flex: 1;
+          padding-left: 0.2933333333rem; }
+          .credit-main .mian-progress .progress-step .step-detail .detail-title {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            align-items: center;
+            align-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -webkit-align-content: center;
+            width: 100%;
+            height: 0.5866666667rem;
+            font-size: 15px;
+            font-weight: 700;
+            color: #333; }
+            [data-dpr="2"] .credit-main .mian-progress .progress-step .step-detail .detail-title {
+              font-size: 30px; }
+            [data-dpr="3"] .credit-main .mian-progress .progress-step .step-detail .detail-title {
+              font-size: 45px; }
+          .credit-main .mian-progress .progress-step .step-detail .detail-explain {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            align-items: center;
+            align-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -webkit-align-content: center;
+            width: 100%;
+            height: 0.52rem;
+            font-size: 12px;
+            color: #999; }
+            [data-dpr="2"] .credit-main .mian-progress .progress-step .step-detail .detail-explain {
+              font-size: 24px; }
+            [data-dpr="3"] .credit-main .mian-progress .progress-step .step-detail .detail-explain {
+              font-size: 36px; }
+        .credit-main .mian-progress .progress-step .step-btn {
+          width: 1.8666666667rem;
+          height: 0.8rem; }
+          .credit-main .mian-progress .progress-step .step-btn .btn-finish {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            align-items: center;
+            align-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -webkit-align-content: center;
+            justify-content: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            display: none;
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+            font-weight: 500;
+            color: #48D46A;
+            background-color: #fff; }
+            [data-dpr="2"] .credit-main .mian-progress .progress-step .step-btn .btn-finish {
+              font-size: 30px; }
+            [data-dpr="3"] .credit-main .mian-progress .progress-step .step-btn .btn-finish {
+              font-size: 45px; }
+          .credit-main .mian-progress .progress-step .step-btn .btn-unfinished {
+            width: 100%;
+            height: 100%;
+            font-size: 15px;
+            font-weight: 500;
+            color: #fff;
+            background-color: #FB9C27;
+            border-radius: 0.4rem; }
+            [data-dpr="2"] .credit-main .mian-progress .progress-step .step-btn .btn-unfinished {
+              font-size: 30px; }
+            [data-dpr="3"] .credit-main .mian-progress .progress-step .step-btn .btn-unfinished {
+              font-size: 45px; }
+
+/*# sourceMappingURL=credit.css.map */

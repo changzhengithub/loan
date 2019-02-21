@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>我要投诉</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/complain/complain.css">
+</head>
+
+<body>
+  <section class="complain" id="complain">
+      <header class="complain-header">
+          <div class="header-back" onclick="goBack();">
+              <img src="../../image/back.png" alt="back">
+          </div>
+          <p class="header-title">我要投诉</p>
+      </header>
+      <div class="complain-main">
+          <ul class="mian-list">
+            <li class="list-item active">
+              <span>暴力催收</span>
+            </li>
+            <li class="list-item">
+              <span>态度恶劣</span>
+            </li>
+            <li class="list-item">
+              <span>信息辱骂</span>
+            </li>
+            <li class="list-item">
+              <span>泄露信息</span>
+            </li>
+            <li class="list-item">
+              <span>不消条据</span>
+            </li>
+            <li class="list-item">
+              <span>违规收费</span>
+            </li>
+            <li class="list-item">
+              <span>套路贷</span>
+            </li>
+            <li class="list-item">
+              <span>暴力催收</span>
+            </li>
+            <li class="list-item">
+              <span>其他</span>
+            </li>
+          </ul>
+          <div class="main-input">
+            <p class="input-tip"><span>*</span>请输入你要投诉的内容</p>
+            <div class="input-textarea">
+              <textarea name="txt" id="txt"  placeholder="建议详细描述" maxlength="200" oninput="txtInput(this);"></textarea>
+            </div>
+            <p class="input-number" id="number"><span id="limit">0</span>/200</p>
+          </div>
+          <div class="main-proof">
+            <p class="proof-title">上传凭证<span>（建议添加相关问题截图，不超过3张）</span></p>
+            <div class="proof-upload">
+              <div class="upload-item">
+                <img src="../../image/alert.png">
+                <!-- 删除按钮 -->
+                <div class="item-delete">
+                  <img src="../../image/delete.png">
+                </div>
+              </div>
+              <div class="upload-item">
+                <img src="../../image/alert.png">
+                <!-- 删除按钮 -->
+                <div class="item-delete">
+                  <img src="../../image/delete.png">
+                </div>
+              </div>
+              <div class="upload">
+                <div class="upload-img">
+                  <img src="../../image/carram.png">
+                </div>
+                <p class="upload-text">上传凭证</p>
+              </div>
+            </div>
+          </div>
+          <div class="main-submit">
+              <button class="submit-btn">提交</button>
+          </div>
+      </div>
+  </section>
+    <script type="text/javascript">
+        apiready = function() {
+
+        };
+        function txtInput (self) {
+          var number = $api.byId('number');
+          var limit = $api.byId('limit');
+          limit.innerText = self.value.length;
+          if (self.value.length >= 200) {
+            $api.css(number, 'color: red');
+            return
+          } else {
+            $api.css(number, 'color: #333');
+          }
+        }
+        function goBack() {
+          api.closeFrame({
+            name: 'complain'
+          });
+        }
+    </script>
+</body>
+
+</html>

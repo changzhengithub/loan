@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>借款弹出层</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/borrow-toast/borrow-toast.css">
+</head>
+
+<body>
+    <section class="toast" id="toast">
+      <div class="toast-main">
+        <div class="main-img">
+          <img src="../../image/alert.png">
+        </div>
+        <p class="main-title">恭喜申请成功</p>
+        <p class="main-hint">一波现金正向你飞奔而来</p>
+        <div class="main-submit">
+            <button class="submit-btn" tapmode onclick="closeToast();">确认提交</button>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+        apiready = function() {
+          var borrow = $api.byId('borrow');
+          $api.css(borrow, 'height:'+ api.winHeight + 'px');
+        };
+        function closeToast() {
+          api.closeFrame({
+            name: 'toast'
+          });
+        }
+    </script>
+</body>
+
+</html>

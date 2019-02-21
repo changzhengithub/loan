@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>认证</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/credit/credit.css">
+</head>
+
+<body>
+    <section class="credit">
+        <header class="credit-header">
+            <p class="header-title">个人认证</p>
+            <p class="header-tip">资料完成度</p>
+        </header>
+        <div class="credit-main">
+            <div class="main-head">
+                <div class="head-detail">
+                    <p class="detail-tel">185****1392</p>
+                    <div class="detail-credit">
+                        <img src="../../image/credit/credit-finish.png">
+                        <img style="display: none" src="../../image/credit/credit-not.png">
+                        <img style="display: none" src="../../image/credit/credit-progress.png">
+                    </div>
+                </div>
+                <div class="head-progress" id="circle">
+                    <span class="progress-value" id="progress-value"></span>
+                </div>
+            </div>
+            <ul class="mian-progress">
+                <li class="progress-step">
+                    <div class="step-icon">
+                        <img src="../../image/credit/personal-info.png">
+                    </div>
+                    <div class="step-detail">
+                        <p class="detail-title">个人信息</p>
+                        <p class="detail-explain">上传你的真实身份信息</p>
+                    </div>
+                    <div class="step-btn">
+                        <button class="btn-finish" style="display: block">已认证</button>
+                        <button class="btn-unfinished" style="display: none">去认证</button>
+                    </div>
+                </li>
+                <li class="progress-step">
+                    <div class="step-icon">
+                        <img src="../../image/credit/relation.png">
+                    </div>
+                    <div class="step-detail">
+                        <p class="detail-title">联系人认证</p>
+                        <p class="detail-explain">补全联系人资料，获取更高额度</p>
+                    </div>
+                    <div class="step-btn">
+                        <button class="btn-finish">已认证</button>
+                        <button class="btn-unfinished">去认证</button>
+                    </div>
+                </li>
+                <li class="progress-step">
+                    <div class="step-icon">
+                        <img src="../../image/credit/phone.png">
+                    </div>
+                    <div class="step-detail">
+                        <p class="detail-title">运营商认证</p>
+                        <p class="detail-explain">个人信息补充</p>
+                    </div>
+                    <div class="step-btn">
+                        <button class="btn-finish">已认证</button>
+                        <button class="btn-unfinished">去认证</button>
+                    </div>
+                </li>
+                <li class="progress-step">
+                    <div class="step-icon">
+                        <img src="../../image/credit/bank-card.png">
+                    </div>
+                    <div class="step-detail">
+                        <p class="detail-title">银行卡认证</p>
+                        <p class="detail-explain">添加银行卡</p>
+                    </div>
+                    <div class="step-btn">
+                        <button class="btn-finish">已认证</button>
+                        <button class="btn-unfinished">去认证</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        apiready = function() {
+            var animate;
+            var arcProgress = api.require('arcProgress');
+            var circle = $api.byId('circle');
+            var progress = $api.byId('progress-value');
+            var offset = $api.offset(circle);
+            arcProgress.open({
+                type: 'annular',
+                centerX: offset.l + (offset.w / 2),
+                centerY: offset.t + (offset.h / 2),
+                radius: offset.h / 2,
+                bgColor: '#EEEEEE',
+                pgColor: '#FB9C27',
+                loopWidth: offset.w / 20,
+                fixedOn: api.frameName,
+                fixed: false
+            }, function(ret, err) {
+                setValue({
+                    id: ret.id,
+                    value: 0
+                });
+            });
+            // 设置进度条数值
+            function setValue(obj) {
+              // ****** 进度条取值 *****
+                var proVal = 25;
+                var timer = parseInt(2500 / proVal);
+                $api.text(progress, obj.value + '%');
+                animate = setTimeout(function() {
+                    arcProgress.setValue({
+                        id: obj.id,
+                        value: ++obj.value
+                    });
+                    setValue(obj);
+                }, timer);
+                if (obj.value >= proVal) {
+                    clearTimeout(animate);
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

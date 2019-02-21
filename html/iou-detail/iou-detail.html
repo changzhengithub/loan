@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>借条详单</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/iou-detail/iou-detail.css">
+</head>
+
+<body>
+    <section class="iou" id="iou">
+        <header class="iou-header">
+            <div class="header-back" onclick="goBack();">
+                <img src="../../image/back.png" alt="back">
+            </div>
+            <p class="header-title">借条详单</p>
+        </header>
+        <div class="iou-main">
+            <div class="main-progress">
+              <div class="progress-item ">
+                <div class="item-img fail">
+                  <img src="../../image/warn.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-title">审核不通过</p>
+                  <p class="detail-text">很遗憾，您的申请未通过审核</p>
+                </div>
+              </div>
+              <div class="progress-item ">
+                <div class="item-img succus">
+                  <img src="../../image/succus.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-title">待审核</p>
+                  <p class="detail-text">您的申请正在等待审核，请稍后</p>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="item-img">
+                  <img src="../../image/succus.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-title">申请提交成功</p>
+                  <p class="detail-text">申请借款1500元，期限10天</p>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="item-img">
+                  <img src="../../image/succus.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-title">申请提交成功</p>
+                  <p class="detail-text">申请借款1500元，期限10天</p>
+                </div>
+              </div>
+              <div class="progress-item">
+                <div class="item-img">
+                  <img src="../../image/succus.png">
+                </div>
+                <div class="item-detail">
+                  <p class="detail-title">申请提交成功</p>
+                  <p class="detail-text">申请借款1500元，期限10天</p>
+                </div>
+              </div>
+            </div>
+            <div class="mian-info">
+              <div class="info-item">
+                <span>借款金额</span>
+                <span>1500元</span>
+              </div>
+              <div class="info-item">
+                <span>借款期限</span>
+                <span>10天</span>
+              </div>
+              <div class="info-item">
+                <span>申请日期</span>
+                <span>2018-11-06 12:40:20</span>
+              </div>
+              <div class="info-item">
+                <span>还款期限</span>
+                <span>2018-11-15 12:40:20</span>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        apiready = function() {
+        };
+
+        function goBack() {
+          api.closeFrame({
+            name: 'iou-detail'
+          });
+        }
+    </script>
+</body>
+
+</html>

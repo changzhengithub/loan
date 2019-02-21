@@ -1,0 +1,182 @@
+@import "../_flex.scss";
+@import "../_reset.scss";
+$unit: 75 !default;
+
+.iou {
+  // position: relative;
+  width: 100%;
+  // height: 100%;
+  padding: {
+    bottom: 30 / $unit * 1rem;
+  }
+  background-color: #F6F6F6;
+  // overflow: auto;
+  &-header {
+    position: relative;
+    width: 100%;
+    height: 342 / $unit * 1rem;
+    padding: {
+      top: 50 / $unit * 1rem;
+    }
+    background-color: #FB9C27;
+    .header-back {
+      position: absolute;
+      left: 30 / $unit * 1rem;
+      top: 55 / $unit * 1rem;
+      z-index: 9;
+      width: 48 / $unit * 1rem;
+      height: 48 / $unit * 1rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .header-title {
+      @include center();
+      width: 100%;
+      height: 58 / $unit * 1rem;
+      @include font-dpr(18px);
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+  &-main {
+    position: relative;
+    width: 690 / $unit * 1rem;
+    margin: {
+      top: -173 / $unit * 1rem;
+      left: auto;
+      right: auto;
+    }
+    background-color: #fff;
+    box-shadow:0px 0px 38 / $unit * 1rem 0px rgba(165, 165, 165, 0.35);
+    border-radius: 12 / $unit * 1rem;
+    .main-progress {
+      position: relative;
+      width: 100%;
+      padding: {
+        top: 30 / $unit * 1rem;
+        bottom: 40 / $unit * 1rem;
+      }
+      border-bottom: 2px dashed #eee;
+      &:before {
+        position: absolute;
+        left: 0;
+        bottom: -15 / $unit * 1rem;
+        z-index: 99;
+        content: '';
+        display: block;
+        width: 15 / $unit * 1rem;
+        height: 30 / $unit * 1rem;
+        background-color: #E6E6E6;
+        border-radius: 0 30 / $unit * 1rem 30 / $unit * 1rem 0;
+      }
+      &:after {
+        position: absolute;
+        right: 0;
+        bottom: -15 / $unit * 1rem;
+        z-index: 99;
+        content: '';
+        display: block;
+        width: 15 / $unit * 1rem;
+        height: 30 / $unit * 1rem;
+        background-color: #E6E6E6;
+        border-radius: 30 / $unit * 1rem 0  0 30 / $unit * 1rem;
+      }
+      .progress-item {
+        position: relative;
+        @include vertical-center();
+        width: 100%;
+        height: 150 / $unit * 1rem;
+        padding: {
+          left: 117 / $unit * 1rem;
+        }
+        .item-img {
+          position: absolute;
+          left: 45 / $unit * 1rem;
+          top: center;
+          z-index: 99;
+          @include center();
+          width: 50 / $unit * 1rem;
+          height: 50 / $unit * 1rem;
+
+          border-radius: 50%;
+          img {
+            width: 40 / $unit * 1rem;
+            height: 40 / $unit * 1rem;
+            border-radius: 50%;
+          }
+        }
+        .fail {
+          background:rgba(252,124,83, .4);
+        }
+        .succus {
+          background:rgba(93,223,114,.4);
+        }
+        .item-detail {
+          @include vertical_horizontal_center();
+          @include flex_1();
+          height: 100%;
+          .detail-title {
+            @include vertical-center();
+            height: 48 / $unit * 1rem;
+            @include font-dpr(15px);
+            font-weight: 500;
+            color: #333;
+          }
+          .detail-text {
+            @include vertical-center();
+            height: 44 / $unit * 1rem;
+            @include font-dpr(12px);
+            font-weight: 500;
+            color: #999;
+          }
+        }
+        &:after {
+          position: absolute;
+          left: 68 / $unit * 1rem;
+          bottom: -52 / $unit * 1rem;
+          z-index: 9;
+          content: '';
+          display: block;
+          width: 2 / $unit * 1rem;
+          height: 108 / $unit * 1rem;
+          background-color: #F6F6F6;
+        }
+        &:last-of-type:after {
+          display: none;
+        }
+      }
+    }
+    .mian-info {
+      width: 690 / $unit * 1rem;
+      height: 300 / $unit * 1rem;
+      padding: {
+        top: 44 / $unit * 1rem;
+        // bottom: 59 / $unit * 1rem;
+      }
+      background-color: #ffffff;
+      border-bottom-left-radius: 12 / $unit * 1rem;
+      border-bottom-right-radius: 12 / $unit * 1rem;
+      .info-item {
+        @include vertical_center();
+        width: 100%;
+        height: 50 / $unit * 1rem;
+        padding: {
+          left: 120 / $unit * 1rem;
+        }
+        @include font-dpr(12px);
+        font-weight: 500;
+        span:first-of-type {
+          color: #666;
+        }
+        span:last-of-type {
+          margin: {
+            left: 55 / $unit * 1rem;
+          }
+          color: #999;
+        }
+      }
+    }
+  }
+}

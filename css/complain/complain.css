@@ -1,0 +1,319 @@
+@charset "UTF-8";
+/*
+项目采用采用淘宝flexible.js来进行页面适配，flexible.js会根据手机的dpr来配置页面跟元素的字体大小，然后采用rem来进行适配。
+根据设计图的十分之一来确定元素为多少rem     x  =  量取实际尺寸 / 页面宽度的十分之一  *  1rem
+$unit设置为设计图的十分之一，宽高通过设计图的实际宽高除以 $unit * 1rem计算出为多少REM,
+这样无论屏幕怎么变化只需得到HTML的font-size值(flexible会自动变换fontsize值)乘以REM就是变化后的宽高；
+ flexible根据dpr的不同来设置字体大小，引入时传入1dpr的字体大小，设计图大小 / 2
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ol,
+ul,
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: none; }
+
+button,
+input {
+  outline: none;
+  border: none;
+  background: none; }
+
+[v-cloak] {
+  display: none; }
+
+.complain {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0.4rem;
+  background-color: #F6F6F6; }
+  .complain-header {
+    position: relative;
+    width: 100%;
+    height: 3.9733333333rem;
+    padding-top: 0.6666666667rem;
+    background-color: #FB9C27; }
+    .complain-header .header-back {
+      position: absolute;
+      left: 0.4rem;
+      top: 0.7333333333rem;
+      z-index: 9;
+      width: 0.64rem;
+      height: 0.64rem; }
+      .complain-header .header-back img {
+        width: 100%;
+        height: 100%; }
+    .complain-header .header-title {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      align-items: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -webkit-align-content: center;
+      justify-content: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      width: 100%;
+      height: 0.7733333333rem;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff; }
+      [data-dpr="2"] .complain-header .header-title {
+        font-size: 36px; }
+      [data-dpr="3"] .complain-header .header-title {
+        font-size: 54px; }
+  .complain-main {
+    position: relative;
+    width: 100%;
+    margin-top: -2.0266666667rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem; }
+    .complain-main .mian-list {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      flex-wrap: wrap;
+      -webkit-flex-wrap: wrap;
+      width: 100%;
+      height: 4.24rem;
+      margin-bottom: 0.2666666667rem;
+      padding-top: 0.4rem;
+      padding-left: 0.2666666667rem;
+      padding-right: 0.2666666667rem;
+      background-color: #fff;
+      box-shadow: 0px 0.04rem 0.0666666667rem 0px rgba(165, 165, 165, 0.35);
+      border-radius: 0.2133333333rem;
+      background-color: #ffffff; }
+      .complain-main .mian-list .list-item {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        width: 2.1333333333rem;
+        height: 0.8rem;
+        margin-left: 0.5333333333rem;
+        font-size: 15px;
+        font-weight: 500;
+        color: #666;
+        background-color: #F8F8F7;
+        border-radius: 0.1066666667rem; }
+        [data-dpr="2"] .complain-main .mian-list .list-item {
+          font-size: 30px; }
+        [data-dpr="3"] .complain-main .mian-list .list-item {
+          font-size: 45px; }
+      .complain-main .mian-list .active {
+        background: rgba(251, 156, 39, 0.1);
+        color: #FE981A; }
+    .complain-main .main-input {
+      width: 100%;
+      height: 4.8rem;
+      margin-bottom: 0.2666666667rem;
+      padding-top: 0.2666666667rem;
+      background-color: #fff;
+      box-shadow: 0px 0.04rem 0.0666666667rem 0px rgba(165, 165, 165, 0.35);
+      border-radius: 0.2133333333rem;
+      background-color: #ffffff; }
+      .complain-main .main-input .input-tip {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        width: 100%;
+        height: 0.76rem;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        font-size: 15px;
+        font-weight: 500;
+        color: #666; }
+        [data-dpr="2"] .complain-main .main-input .input-tip {
+          font-size: 30px; }
+        [data-dpr="3"] .complain-main .main-input .input-tip {
+          font-size: 45px; }
+        .complain-main .main-input .input-tip span {
+          color: #EC5333; }
+      .complain-main .main-input .input-textarea {
+        width: 100%;
+        height: 3.0666666667rem; }
+        .complain-main .main-input .input-textarea textarea {
+          width: 100%;
+          height: 100%;
+          padding-left: 0.6666666667rem;
+          padding-right: 0.6666666667rem;
+          line-height: 0.6666666667rem;
+          font-size: 15px;
+          font-weight: 500;
+          color: #333;
+          resize: none;
+          outline: none; }
+          [data-dpr="2"] .complain-main .main-input .input-textarea textarea {
+            font-size: 30px; }
+          [data-dpr="3"] .complain-main .main-input .input-textarea textarea {
+            font-size: 45px; }
+          .complain-main .main-input .input-textarea textarea::-webkit-input-placeholder {
+            font-weight: 500;
+            font-size: 15px;
+            color: #999;
+            outline: none; }
+            [data-dpr="2"] .complain-main .main-input .input-textarea textarea::-webkit-input-placeholder {
+              font-size: 30px; }
+            [data-dpr="3"] .complain-main .main-input .input-textarea textarea::-webkit-input-placeholder {
+              font-size: 45px; }
+      .complain-main .main-input .input-number {
+        width: 100%;
+        padding-right: 0.3333333333rem;
+        text-align: right;
+        font-size: 12px;
+        font-weight: 500;
+        color: #999; }
+        [data-dpr="2"] .complain-main .main-input .input-number {
+          font-size: 24px; }
+        [data-dpr="3"] .complain-main .main-input .input-number {
+          font-size: 36px; }
+    .complain-main .main-proof {
+      width: 100%;
+      height: 4.4rem;
+      margin-bottom: 0.48rem;
+      background-color: #fff;
+      box-shadow: 0px 0.04rem 0.0666666667rem 0px rgba(165, 165, 165, 0.35);
+      border-radius: 0.2133333333rem;
+      background-color: #ffffff; }
+      .complain-main .main-proof .proof-title {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        width: 100%;
+        height: 1.2rem;
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        font-size: 15px;
+        font-weight: 500;
+        color: #333; }
+        [data-dpr="2"] .complain-main .main-proof .proof-title {
+          font-size: 30px; }
+        [data-dpr="3"] .complain-main .main-proof .proof-title {
+          font-size: 45px; }
+        .complain-main .main-proof .proof-title span {
+          font-size: 12px;
+          color: #999; }
+          [data-dpr="2"] .complain-main .main-proof .proof-title span {
+            font-size: 24px; }
+          [data-dpr="3"] .complain-main .main-proof .proof-title span {
+            font-size: 36px; }
+      .complain-main .main-proof .proof-upload {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        width: 100%;
+        height: 2.5333333333rem; }
+        .complain-main .main-proof .proof-upload .upload-item {
+          position: relative;
+          width: 2.5333333333rem;
+          height: 2.5333333333rem;
+          margin-left: 0.4rem; }
+          .complain-main .main-proof .proof-upload .upload-item img {
+            width: 100%;
+            height: 100%; }
+          .complain-main .main-proof .proof-upload .upload-item .item-delete {
+            position: absolute;
+            right: -0.1333333333rem;
+            top: -0.1333333333rem;
+            z-index: 9;
+            width: 0.4rem;
+            height: 0.4rem; }
+            .complain-main .main-proof .proof-upload .upload-item .item-delete img {
+              width: 100%;
+              height: 100%; }
+        .complain-main .main-proof .proof-upload .upload {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          flex-direction: column;
+          -webkit-flex-direction: column;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          justify-content: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          width: 2.5333333333rem;
+          height: 2.5333333333rem;
+          margin-left: 0.4rem;
+          padding-top: 0.1333333333rem;
+          border: 1px solid #F3F3F3;
+          border-radius: 0.1333333333rem; }
+          .complain-main .main-proof .proof-upload .upload .upload-img {
+            width: 0.92rem;
+            height: 0.7333333333rem; }
+            .complain-main .main-proof .proof-upload .upload .upload-img img {
+              width: 100%;
+              height: 100%; }
+          .complain-main .main-proof .proof-upload .upload .upload-text {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            align-items: center;
+            align-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -webkit-align-content: center;
+            justify-content: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            width: 100%;
+            height: 0.7733333333rem;
+            font-size: 14px;
+            font-weight: 500;
+            color: #999; }
+            [data-dpr="2"] .complain-main .main-proof .proof-upload .upload .upload-text {
+              font-size: 28px; }
+            [data-dpr="3"] .complain-main .main-proof .proof-upload .upload .upload-text {
+              font-size: 42px; }
+    .complain-main .main-submit {
+      width: 100%;
+      height: 1.2rem; }
+      .complain-main .main-submit .submit-btn {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        background: linear-gradient(90deg, #fe9b43, #ffac35);
+        box-shadow: 0 0.08rem 0.1333333333rem 0 rgba(254, 159, 64, 0.33);
+        border-radius: 0.6rem; }
+        [data-dpr="2"] .complain-main .main-submit .submit-btn {
+          font-size: 36px; }
+        [data-dpr="3"] .complain-main .main-submit .submit-btn {
+          font-size: 54px; }
+
+/*# sourceMappingURL=complain.css.map */

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>借款记录tab</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/recordTab/recordTab.css">
+</head>
+
+<body>
+  <section id="recordTab" class="recordTab">
+    <div class="recordTab-item">
+      <div class="item-bg">
+        <img src="../../image/floor.png">
+      </div>
+      <div class="item-container">
+        <div class="container-info">
+          <div class="info-leftside">
+            <p class="leftside-title">借款</p>
+            <p class="leftside-time">2018-11-06 12:40:20</p>
+          </div>
+          <div class="info-rightside succeed"><span>￥</span><span>1500</span></div>
+        </div>
+        <div class="container-tag">
+          <div class="tag-tip">
+            <div class="tip-img">
+              <img src="../../image/succus.png">
+            </div>
+            <p class="tip-text">审核通过</p>
+          </div>
+          <div class="tag-btn">
+            <p class="btn-text">查看详情</p>
+            <div class="btn-img">
+              <img src="../../image/mine/arrow.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="recordTab-item">
+      <div class="item-bg">
+        <img src="../../image/floor.png">
+      </div>
+      <div class="item-container">
+        <div class="container-info">
+          <div class="info-leftside">
+            <p class="leftside-title">借款</p>
+            <p class="leftside-time">2018-11-06 12:40:20</p>
+          </div>
+          <div class="info-rightside fail"><span>￥</span><span>1500</span></div>
+        </div>
+        <div class="container-tag">
+          <div class="tag-tip">
+            <div class="tip-img">
+              <img src="../../image/warn.png">
+            </div>
+            <p class="tip-text">审核通过</p>
+          </div>
+          <div class="tag-btn">
+            <p class="btn-text">查看详情</p>
+            <div class="btn-img">
+              <img src="../../image/mine/arrow.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="recordTab-item">
+      <div class="item-bg">
+        <img src="../../image/floor.png">
+      </div>
+      <div class="item-container">
+        <div class="container-info">
+          <div class="info-leftside">
+            <p class="leftside-title">借款</p>
+            <p class="leftside-time">2018-11-06 12:40:20</p>
+          </div>
+          <div class="info-rightside fail"><span>￥</span><span>1500</span></div>
+        </div>
+        <div class="container-tag">
+          <div class="tag-tip">
+            <div class="tip-img">
+              <img src="../../image/wait.png">
+            </div>
+            <p class="tip-text">审核通过</p>
+          </div>
+          <div class="tag-btn">
+            <p class="btn-text">查看详情</p>
+            <div class="btn-img">
+              <img src="../../image/mine/arrow.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="recordTab-item">
+      <div class="item-bg">
+        <img src="../../image/floor.png">
+      </div>
+      <div class="item-container">
+        <div class="container-info">
+          <div class="info-leftside">
+            <p class="leftside-title">借款</p>
+            <p class="leftside-time">2018-11-06 12:40:20</p>
+          </div>
+          <div class="info-rightside fail"><span>￥</span><span>1500</span></div>
+        </div>
+        <div class="container-tag">
+          <div class="tag-tip">
+            <div class="tip-img">
+              <img src="../../image/wait.png">
+            </div>
+            <p class="tip-text">审核通过</p>
+          </div>
+          <div class="tag-btn">
+            <p class="btn-text">查看详情</p>
+            <div class="btn-img">
+              <img src="../../image/mine/arrow.png">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <script type="text/javascript">
+      apiready = function() {
+        var recordTab = $api.byId('recordTab');
+        $api.css(recordTab, 'height:'+ api.frameHeight + 'px');
+        getToggle();
+      }
+      // 获取切换导航栏参数
+      function getToggle() {
+        api.addEventListener({
+            name: 'tabIndex'
+        }, function(ret, err) {
+            console.log(ret.value.id);
+        });
+      }
+
+    </script>
+</body>
+
+</html>

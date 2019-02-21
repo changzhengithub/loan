@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/home/home.css">
+  </head>
+  <body>
+    <section class="home" id="home">
+      <div class="home-banner">
+        <img src="../../image/home/home-banner.png" alt="banner">
+      </div>
+      <div class="home-main">
+        <div class="main-bg">
+          <img src="../../image/home/home-bg.png" alt="bg">
+        </div>
+        <div class="main-content">
+          <div class="content-logo">
+            <p>logo</p>
+          </div>
+          <p class="content-title">额度范围(元)</p>
+          <p class="content-scope"><span class="scope-money">￥</span><span>1500<span class="scope-sign">~</span>10000</span></p>
+          <div class="content-btn">
+            <button tapmode class="btn" onclick="rightApply();">立即申请</button>
+          </div>
+          <div class="content-slogan">
+            <p class="slogan-item"><span>期限: </span><span>10天</span></p>
+            <p class="slogan-item"><span>日利率: </span><span>0.01%</span></p>
+          </div>
+          <div class="content-line">
+            <div class="line"></div>
+          </div>
+          <div class="content-apply">
+            <p class="apply-title">申请条件</p>
+            <ul class="apply-list">
+              <li class="list-item">
+                <img src="../../image/home/staff.png">
+                <p class="item-tip">18-45周岁</p>
+              </li>
+              <li class="list-item">
+                <img src="../../image/home/id.png">
+                <p class="item-tip">二代身份证</p>
+              </li>
+              <li class="list-item">
+                <img src="../../image/home/phone.png">
+                <p class="item-tip">实名手机号</p>
+              </li>
+              <li class="list-item">
+                <img src="../../image/home/bank-card.png">
+                <p class="item-tip">银行卡</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript">
+        apiready = function () {
+          var home = $api.byId('home');
+          $api.css(home, 'height:' + api.frameHeight + 'px');
+        };
+    </script>
+  </body>
+</html>

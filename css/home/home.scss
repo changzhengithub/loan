@@ -1,0 +1,188 @@
+@import "../_flex.scss";
+@import "../_reset.scss";
+$unit: 75 !default;
+
+@font-face {
+  font-family: Condensed;
+  src: url('../DIN-Condensed-Bold.ttf');
+}
+
+.home {
+  width: 100%;
+  overflow: hidden;
+  background-color: #ccc;
+  &-banner {
+    width: 100%;
+    height: 482 / $unit * 1rem;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-main {
+    position: relative;
+    width: 100%;
+    height: 819 / $unit * 1rem;
+    margin-top: -120 / $unit * 1rem;
+    .main-bg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .main-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      padding: {
+        left: 30 / $unit * 1rem;
+        right: 30 / $unit * 1rem;
+        top: 70 / $unit * 1rem;
+      }
+      .content-logo {
+        position: absolute;;
+        top: 30 / $unit * 1rem;
+        left: 65 / $unit * 1rem;
+        z-index: 9;
+        @include vertical-center();
+        width: 200 / $unit * 1rem;
+        height: 90 / $unit * 1rem;
+        p {
+          @include vertical-center();
+          height: 100%;
+          @include font-dpr(20px);
+          font-weight: 700;
+          color: #333;
+        }
+        img {
+          width: 90 / $unit * 1rem;
+          height: 100%;
+        }
+      }
+      .content-title {
+        @include center();
+        width: 100%;
+        height: 100 / $unit * 1rem;
+        @include font-dpr(13px);
+        font-weight:500;
+        color: #666;
+      }
+      .content-scope {
+        @include center();
+        width: 100%;
+        height: 120 / $unit * 1rem;
+        font-weight: 700;
+        color: #363636;
+        .scope-money{
+          @include font-dpr(18px);
+          margin: {
+            top: 5 / $unit * 1rem;
+            right: 10 / $unit * 1rem;
+          }
+        }
+        span:last-of-type {
+          font-family: Condensed;
+          @include font-dpr(56px);
+          .scope-sign {
+            @include font-dpr(24px);
+          }
+        }
+      }
+      .content-btn {
+        width: 100%;
+        height: 90 / $unit * 1rem;
+        padding: {
+          left: 50 / $unit * 1rem;
+          right: 50 / $unit * 1rem;
+        }
+        margin: {
+          top: 20 / $unit * 1rem;
+          bottom: 7 / $unit * 1rem;
+        }
+        button {
+          width: 100%;
+          height: 100%;
+          @include font-dpr(18px);
+          color: #fff;
+          font-weight: 700;
+          background: linear-gradient(90deg,rgba(254,155,67,1),rgba(255,172,53,1));
+          box-shadow: 0px 6 / $unit * 1rem 10 / $unit * 1rem 0px rgba(254,159,64,0.33);
+          border-radius: 45 / $unit * 1rem;
+        }
+      }
+      .content-slogan {
+        @include vertical_center_horizontal_between();
+        width: 100%;
+        height: 106 / $unit * 1rem;
+        padding: {
+          left: 80 / $unit * 1rem;
+          right: 80 / $unit * 1rem;
+        }
+        .slogan-item {
+          @include font-dpr(13px);
+          span:first-of-type {
+            color: #666666;
+          }
+          span:last-of-type {
+            margin: {
+              left: 15 / $unit * 1rem;
+            }
+            color: #ff8d20;
+          }
+        }
+      }
+      .content-line {
+        width: 100%;
+        padding: {
+          left: 40 / $unit * 1rem;
+          right: 40 / $unit * 1rem;
+        }
+        .line {
+          width: 100%;
+          height: 2 / $unit * 1rem;
+          background-color: #eee;
+        }
+      }
+      .content-apply {
+        width: 100%;
+        padding: {
+          left: 35 / $unit * 1rem;
+          right: 35 / $unit * 1rem;
+        }
+        .apply-title {
+          @include vertical-center();
+          width: 100%;
+          height: 106 / $unit * 1rem;
+          @include font-dpr(15px);
+          font-weight: 700;
+          color: #333333;
+        }
+        .apply-list {
+          @include vertical_center_horizontal_between();
+          width: 100%;
+          .list-item {
+            @include vertical_direction_center();
+            img {
+              width: 70 / $unit * 1rem;
+              height: 70 / $unit * 1rem;
+              margin: 0 auto;
+            }
+            .item-tip {
+              @include center();
+              height: 60 / $unit * 1rem;
+              @include font-dpr(12px);
+              color: #666666;
+            }
+          }
+        }
+      }
+    }
+  }
+}

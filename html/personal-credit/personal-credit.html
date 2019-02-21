@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>个人信息认证</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/personal-credit/personal-credit.css">
+</head>
+
+<body>
+  <section class="credit" id="credit">
+      <header class="credit-header">
+          <div class="header-back" onclick="goBack();">
+              <img src="../../image/back.png" alt="back">
+          </div>
+          <p class="header-title">个人信息认证</p>
+      </header>
+      <div class="credit-main">
+          <div class="mian-info">
+            <div class="info-item">
+              <span>你的名字</span>
+              <span>珊珊</span>
+            </div>
+            <div class="info-item">
+              <span>身份证号</span>
+              <span>340856**********58</span>
+            </div>
+          </div>
+          <div class="main-upload">
+            <div class="upload-step">
+              <p class="step-title">请拍摄并上传照片</p>
+              <div class="step-container">
+                <div class="container-item">
+                  <div class="item-img">
+                    <img src="../../image/id-pur.png">
+                  </div>
+                  <p class="item-text">身份证人像面</p>
+                </div>
+                <div class="container-item">
+                  <div class="item-img">
+                    <img src="../../image/id-card.png">
+                  </div>
+                  <p class="item-text">身份证人像面</p>
+                </div>
+              </div>
+            </div>
+            <div class="upload-step">
+              <p class="step-title">人脸识别</p>
+              <div class="step-container">
+                <div class="container-item">
+                  <div class="item-img">
+                    <img src="../../image/face.png">
+                  </div>
+                  <p class="item-text">人脸识别</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-submit">
+              <button class="submit-btn">提交</button>
+          </div>
+      </div>
+  </section>
+    <script type="text/javascript">
+        apiready = function() {
+        };
+        function goBack() {
+          api.closeFrame({
+            name: 'personal-credit'
+          });
+        }
+    </script>
+</body>
+
+</html>

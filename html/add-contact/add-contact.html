@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>添加联系人</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/add-contact/add-contact.css">
+</head>
+
+<body>
+    <section class="contact">
+        <header class="contact-header">
+          <div class="header-back" onclick="goBack();">
+            <img src="../../image/back.png" alt="back">
+          </div>
+          <p class="header-title">添加联系人</p>
+        </header>
+        <div class="contact-main">
+          <div class="main-list">
+            <div class="list-item">
+              <div class="item-summary">
+                <span>联系人姓名</span>
+              </div>
+              <div class="item-slide">
+                <div class="slide-input">
+                  <input type="text" placeholder="请输入姓名">
+                </div>
+                <div class="slide-icon">
+                  <img src="../../image/book.png">
+                </div>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="item-summary">
+                <span>与您的关系</span>
+              </div>
+              <div class="item-slide">
+                <div class="slide-input">
+                  <input type="text" disabled="true" placeholder="请选择">
+                </div>
+                <div class="slide-arrow">
+                  <img src="../../image/mine/arrow.png">
+                </div>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="item-summary">
+                <span>联系人手机</span>
+              </div>
+              <div class="item-slide">
+                <div class="slide-input">
+                  <input type="text" placeholder="请输入号码">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-list">
+            <div class="list-item">
+              <div class="item-summary">
+                <span>联系人姓名</span>
+              </div>
+              <div class="item-slide">
+                <div class="slide-input">
+                  <input type="text" placeholder="请输入姓名">
+                </div>
+                <div class="slide-icon">
+                  <img src="../../image/book.png">
+                </div>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="item-summary">
+                <span>与您的关系</span>
+              </div>
+              <div class="item-slide">
+                <div class="slide-input">
+                  <input type="text" disabled="true" placeholder="请选择">
+                </div>
+                <div class="slide-arrow">
+                  <img src="../../image/mine/arrow.png">
+                </div>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="item-summary">
+                <span>联系人手机</span>
+              </div>
+              <div class="item-slide">
+                <div class="slide-input">
+                  <input type="text" placeholder="请输入号码">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-submit">
+              <button class="submit-btn" tapmode onclick="openToast();">确认提交</button>
+          </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+    apiready = function() {
+
+    };
+    function goBack() {
+      api.closeFrame({
+        name: 'add-contact'
+      });
+    }
+    </script>
+</body>
+
+</html>
