@@ -12,28 +12,14 @@ $unit: 75 !default;
   height: 100%;
   &-header {
     width: 100%;
-    height: 341 / $unit * 1rem;
-    padding: {
-      top: 42 / $unit * 1rem;
-    }
+    height: 173 / $unit * 1rem;
     background-color: #FB9C27;
-    .header-title {
-      @include center();
-      width: 100%;
-      height: 70 / $unit * 1rem;
-      @include font-dpr(17px);
-      font-weight: 700;
-      color: #fff;
-    }
     .header-tip {
       @include vertical-center();
       width: 100%;
       height: 70 / $unit * 1rem;
       padding: {
         left: 60 / $unit * 1rem;
-      }
-      margin: {
-        top: 39 / $unit * 1rem;
       }
       @include font-dpr(17px);
       font-weight: 700;
@@ -44,7 +30,7 @@ $unit: 75 !default;
     position: relative;
     width: 100%;
     // height: 819 / $unit * 1rem;
-    margin-top: -115 / $unit * 1rem;
+    margin-top: -103 / $unit * 1rem;
     padding: {
       left: 30 / $unit * 1rem;
       right: 30 / $unit * 1rem;

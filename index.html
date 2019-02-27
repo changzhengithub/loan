@@ -4,40 +4,27 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <script type="text/javascript" charset="utf-8" src="./script/flexible.js"></script>
+    <script type="text/javascript" src="./script/api.js"></script>
     <title>Hello APP</title>
     <link rel="stylesheet" type="text/css" href="./css/api.css" />
 </head>
 
 <body>
-    <script type="text/javascript" src="./script/api.js"></script>
     <script type="text/javascript">
         apiready = function() {
             var measure = flexible.rem * flexible.dpr;
-            var TabHeight = Math.ceil(100 / 75 * measure);
-            var tabH = Math.ceil(120 / 75 * measure);
+      			var TabHeight = Math.ceil(100 / 75 * measure);
             var FrameGroupHeight = api.frameHeight - TabHeight;
-            // openFrame();
+
             funIniGroup(FrameGroupHeight);
-            funInitFrame(FrameGroupHeight, tabH);
+            funInitFrame(FrameGroupHeight, TabHeight);
+            setListener();
         };
-
-        function openFrame() {
-            api.openFrame({
-                name: 'test',
-                url: './html/iou-record/iou-record.html',
-                bounces: true,
-                rect: {
-                    x: 0,
-                    y: 0,
-                    w: 'auto',
-                    h: 'auto'
-                }
-            });
-        }
-
-        function funInitFrame(FrameGroupHeight, tabH) {
+        function funInitFrame(FrameGroupHeight, TabHeight) {
+            var index = $api.byId('index');
             api.openFrame({
                 name: 'tabs',
                 url: './html/common/tabs.html',
@@ -45,7 +32,7 @@
                     x: 0,
                     y: FrameGroupHeight,
                     w: 'auto',
-                    h: tabH
+                    h: TabHeight
                 },
                 bounces: false
             });
@@ -55,17 +42,14 @@
             var frames = [{
                 name: 'home',
                 url: './html/home/home.html',
-                bgColor: '#eeeff3',
                 bounces: false
             }, {
                 name: 'credit',
                 url: './html/credit/credit.html',
-                bgColor: '#eeeff3',
                 bounces: false
             }, {
                 name: 'mine',
                 url: './html/mine/mine.html',
-                bgColor: '#eeeff3',
                 bounces: false
             }]
             api.openFrameGroup({
@@ -82,6 +66,20 @@
             }, function(ret, err) {
                 console.log(JSON.stringify(ret));
             });
+        }
+        ///设置监听器
+        function setListener() {
+          //底部菜单切换时，需要刷新首页的联系客服和立即申请按钮显示以及兑现页面是否显示、刷新认证状态
+          api.addEventListener({
+            name: 'SwitchIndex'
+          }, function(ret, err) {
+            if (ret) {
+              api.setFrameGroupIndex({
+                name: 'mainGroup',
+                index: ret.value.index
+              });
+            }
+          });
         }
     </script>
 </body>

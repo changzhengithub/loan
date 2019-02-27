@@ -28,6 +28,10 @@ input {
 [v-cloak] {
   display: none; }
 
+html, body {
+  height: 100%;
+  width: 100%; }
+
 .credit {
   width: 100%;
   height: 100%;
@@ -35,44 +39,12 @@ input {
   .credit-header {
     position: relative;
     width: 100%;
-    height: 3.4rem;
-    padding-top: 0.6666666667rem;
+    height: 1.16rem;
     background-color: #FB9C27; }
-    .credit-header .header-back {
-      position: absolute;
-      left: 0.4rem;
-      top: 0.7333333333rem;
-      z-index: 9;
-      width: 0.64rem;
-      height: 0.64rem; }
-      .credit-header .header-back img {
-        width: 100%;
-        height: 100%; }
-    .credit-header .header-title {
-      display: flex;
-      display: -webkit-box;
-      display: -webkit-flex;
-      align-items: center;
-      align-content: center;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -webkit-align-content: center;
-      justify-content: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      width: 100%;
-      height: 0.7733333333rem;
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff; }
-      [data-dpr="2"] .credit-header .header-title {
-        font-size: 36px; }
-      [data-dpr="3"] .credit-header .header-title {
-        font-size: 54px; }
   .credit-main {
     position: relative;
     width: 100%;
-    margin-top: -1.3333333333rem;
+    margin-top: -1.16rem;
     padding-left: 0.4rem;
     padding-right: 0.4rem; }
     .credit-main .mian-info {

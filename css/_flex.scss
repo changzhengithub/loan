@@ -80,7 +80,6 @@
   flex: 1;
 }
 
-
 @mixin center () {
   $param: (flex flex) (alignItems center) (justifyContent center);
   @include flexSet($param);

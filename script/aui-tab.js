@@ -39,9 +39,9 @@
                 dom: this
               })
             };
-            if (!checkNetwork() || !checkLogin()){
-              return;
-            }
+            // if (!checkNetwork() || !checkLogin()){
+            //   return;
+            // }
             this.parentNode.querySelector(".aui-active").classList.remove("aui-active");
             this.classList.add("aui-active");
           }

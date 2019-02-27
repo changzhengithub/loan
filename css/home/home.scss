@@ -7,6 +7,13 @@ $unit: 75 !default;
   src: url('../DIN-Condensed-Bold.ttf');
 }
 
+.headerIos{
+  padding-top: 80px;
+}
+.headerAnd{
+  padding-top: -25px;
+}
+
 .home {
   width: 100%;
   overflow: hidden;
@@ -37,7 +44,9 @@ $unit: 75 !default;
       }
     }
     .main-content {
-      position: relative;
+      position: absolute;
+      left: 0;
+      top: 0;
       z-index: 1;
       width: 100%;
       height: 100%;

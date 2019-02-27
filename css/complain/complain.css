@@ -28,6 +28,10 @@ input {
 [v-cloak] {
   display: none; }
 
+html, body {
+  height: 100%;
+  width: 100%; }
+
 .complain {
   width: 100%;
   height: 100%;
@@ -36,40 +40,9 @@ input {
   .complain-header {
     position: relative;
     width: 100%;
-    height: 3.9733333333rem;
+    height: 2.0266666667rem;
     padding-top: 0.6666666667rem;
     background-color: #FB9C27; }
-    .complain-header .header-back {
-      position: absolute;
-      left: 0.4rem;
-      top: 0.7333333333rem;
-      z-index: 9;
-      width: 0.64rem;
-      height: 0.64rem; }
-      .complain-header .header-back img {
-        width: 100%;
-        height: 100%; }
-    .complain-header .header-title {
-      display: flex;
-      display: -webkit-box;
-      display: -webkit-flex;
-      align-items: center;
-      align-content: center;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -webkit-align-content: center;
-      justify-content: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      width: 100%;
-      height: 0.7733333333rem;
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff; }
-      [data-dpr="2"] .complain-header .header-title {
-        font-size: 36px; }
-      [data-dpr="3"] .complain-header .header-title {
-        font-size: 54px; }
   .complain-main {
     position: relative;
     width: 100%;

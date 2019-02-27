@@ -32,6 +32,10 @@ input {
   display: none;
 }
 
+html, body{
+  height:100%;
+  width:100%;
+}
 
 @mixin font-dpr($fontSize) {
     font-size: $fontSize;

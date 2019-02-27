@@ -9,92 +9,93 @@
     <title>帮助中心</title>
     <link rel="stylesheet" type="text/css" href="../../css/api.css" />
     <link rel="stylesheet" href="../../css/help-center/help-center.css">
+    <link rel="stylesheet" href="../../iconfont/iconfont.css">
+    <script type="text/javascript" charset="utf-8" src="../../iconfont/iconfont.js"></script>
 </head>
 
 <body>
     <section class="help">
         <header class="help-header">
-          <div class="header-back" tapmode onclick="goBack();">
-            <img src="../../image/back.png" alt="back">
-          </div>
-          <p class="header-title">帮助中心</p>
         </header>
         <div class="help-main">
             <ul class="main-list">
               <li class="list-item">
                 <div class="item-icon">
-                  <img src="../../image/question.png">
+                  <!-- <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-changjianwenti"></use>
+                  </svg> -->
+                  <i class="iconfont icon-changjianwenti"></i>
                 </div>
                 <div class="item-detail">
                   <p class="detail-text">闪电花呗是做什么的？</p>
                   <div class="detail-arrow">
-                    <img src="../../image/mine/arrow.png">
+                    <i class="iconfont icon-arrow-right"></i>
                   </div>
                 </div>
               </li>
               <li class="list-item">
                 <div class="item-icon">
-                  <img src="../../image/question.png">
+                  <i class="iconfont icon-changjianwenti"></i>
                 </div>
                 <div class="item-detail">
                   <p class="detail-text">咨询审核进步如何查看？</p>
                   <div class="detail-arrow">
-                    <img src="../../image/mine/arrow.png">
+                    <i class="iconfont icon-arrow-right"></i>
                   </div>
                 </div>
               </li>
               <li class="list-item">
                 <div class="item-icon">
-                  <img src="../../image/question.png">
+                  <i class="iconfont icon-changjianwenti"></i>
                 </div>
                 <div class="item-detail">
                   <p class="detail-text">审核不通过的原因？</p>
                   <div class="detail-arrow">
-                    <img src="../../image/mine/arrow.png">
+                    <i class="iconfont icon-arrow-right"></i>
                   </div>
                 </div>
               </li>
               <li class="list-item">
                 <div class="item-icon">
-                  <img src="../../image/question.png">
+                  <i class="iconfont icon-changjianwenti"></i>
                 </div>
                 <div class="item-detail">
                   <p class="detail-text">审核需要提高什么资料？审核如果审核的？</p>
                   <div class="detail-arrow">
-                    <img src="../../image/mine/arrow.png">
+                    <i class="iconfont icon-arrow-right"></i>
                   </div>
                 </div>
               </li>
               <li class="list-item">
                 <div class="item-icon">
-                  <img src="../../image/question.png">
+                  <i class="iconfont icon-changjianwenti"></i>
                 </div>
                 <div class="item-detail">
                   <p class="detail-text">我的姓名或个人子那些填写错误，能否修改？</p>
                   <div class="detail-arrow">
-                    <img src="../../image/mine/arrow.png">
+                    <i class="iconfont icon-arrow-right"></i>
                   </div>
                 </div>
               </li>
               <li class="list-item">
                 <div class="item-icon">
-                  <img src="../../image/question.png">
+                  <i class="iconfont icon-changjianwenti"></i>
                 </div>
                 <div class="item-detail">
                   <p class="detail-text">我的个人资料是否被泄露？</p>
                   <div class="detail-arrow">
-                    <img src="../../image/mine/arrow.png">
+                    <i class="iconfont icon-arrow-right"></i>
                   </div>
                 </div>
               </li>
               <li class="list-item">
                 <div class="item-icon">
-                  <img src="../../image/question.png">
+                  <i class="iconfont icon-changjianwenti"></i>
                 </div>
                 <div class="item-detail">
                   <p class="detail-text">为什么我的银行卡绑定不成功？</p>
                   <div class="detail-arrow">
-                    <img src="../../image/mine/arrow.png">
+                    <i class="iconfont icon-arrow-right"></i>
                   </div>
                 </div>
               </li>
@@ -106,11 +107,6 @@
         apiready = function() {
 
         };
-        function goBack() {
-          api.closeFrame({
-            name: 'help-center'
-          });
-        }
     </script>
 </body>
 

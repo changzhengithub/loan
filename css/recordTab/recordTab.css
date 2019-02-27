@@ -28,6 +28,10 @@ input {
 [v-cloak] {
   display: none; }
 
+html, body {
+  height: 100%;
+  width: 100%; }
+
 .recordTab {
   width: 100%;
   height: 100%;
@@ -150,11 +154,19 @@ input {
           -webkit-align-items: center;
           -webkit-align-content: center; }
           .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img {
-            width: 0.5333333333rem;
-            height: 0.5333333333rem; }
-            .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img img {
-              width: 100%;
-              height: 100%; }
+            width: 0.5333333333rem; }
+            .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img i {
+              font-size: 20px; }
+              [data-dpr="2"] .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img i {
+                font-size: 40px; }
+              [data-dpr="3"] .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img i {
+                font-size: 60px; }
+            .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img .fail-color {
+              color: #FA5F42; }
+            .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img .succus-color {
+              color: #42D167; }
+            .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-img .hint-color {
+              color: #FFAA5C; }
           .recordTab .recordTab-item .item-container .container-tag .tag-tip .tip-text {
             margin-left: 0.2666666667rem;
             font-size: 12px;
@@ -174,11 +186,14 @@ input {
           -webkit-align-items: center;
           -webkit-align-content: center; }
           .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-img {
-            width: 0.5333333333rem;
-            height: 0.5333333333rem; }
-            .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-img img {
-              width: 100%;
-              height: 100%; }
+            width: 0.5333333333rem; }
+            .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-img i {
+              font-size: 12px;
+              color: #CCCCCC; }
+              [data-dpr="2"] .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-img i {
+                font-size: 24px; }
+              [data-dpr="3"] .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-img i {
+                font-size: 36px; }
           .recordTab .recordTab-item .item-container .container-tag .tag-btn .btn-text {
             margin-right: 0.2rem;
             font-size: 12px;

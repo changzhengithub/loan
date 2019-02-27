@@ -2,10 +2,8 @@
 @import "../_reset.scss";
 $unit: 75 !default;
 
-@font-face {
-  font-family: Condensed;
-  src: url('../DIN-Condensed-Bold.ttf');
-}
+
+
 
 .help {
   width: 100%;
@@ -13,31 +11,8 @@ $unit: 75 !default;
   &-header {
     position: relative;
     width: 100%;
-    height: 299 / $unit * 1rem;
-    padding: {
-      top: 50 / $unit * 1rem;
-    }
+    height: 146 / $unit * 1rem;
     background-color: #FB9C27;
-    .header-back {
-      position: absolute;
-      left: 30 / $unit * 1rem;
-      top: 55 / $unit * 1rem;
-      z-index: 9;
-      width: 48 / $unit * 1rem;
-      height: 48 / $unit * 1rem;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .header-title {
-      @include center();
-      width: 100%;
-      height: 58 / $unit * 1rem;
-      @include font-dpr(18px);
-      font-weight: 700;
-      color: #fff;
-    }
   }
   &-main {
     position: relative;
@@ -63,15 +38,17 @@ $unit: 75 !default;
         padding: {
           left: 30 / $unit * 1rem;
         }
+
         .item-icon {
           width: 26 / $unit * 1rem;
           height: 29 / $unit * 1rem;
-          // margin: {
-          //   right: 24 / $unit * 1rem;
+          // img {
+          //   width: 100%;
+          //   height: 100%;
           // }
-          img {
-            width: 100%;
-            height: 100%;
+          i {
+            @include font-dpr(15px);
+            color: #FFAA5C;
           }
         }
         .item-detail {
@@ -87,16 +64,16 @@ $unit: 75 !default;
             @include vertical-center();
             @include flex_1();
             height: 100%;
-            @include font-dpr(14px);
+            @include font-dpr(13px);
             font-weight: 500;
             color: #333;
           }
           .detail-arrow {
-            width: 40 / $unit * 1rem;
-            height: 40 / $unit * 1rem;
-            img {
-              width: 100%;
-              height: 100%;
+            // width: 40 / $unit * 1rem;
+            // height: 40 / $unit * 1rem;
+            i {
+              @include font-dpr(14px);
+              color: #999;
             }
           }
         }

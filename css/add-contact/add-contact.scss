@@ -2,44 +2,19 @@
 @import "../_reset.scss";
 $unit: 75 !default;
 
-
 .contact {
   width: 100%;
   height: 100%;
   background-color: #F6F6F6;
   &-header {
-    position: relative;
     width: 100%;
-    height: 256 / $unit * 1rem;
-    padding: {
-      top: 50 / $unit * 1rem;
-    }
+    height: 88 / $unit * 1rem;
     background-color: #FB9C27;
-    .header-back {
-      position: absolute;
-      left: 30 / $unit * 1rem;
-      top: 55 / $unit * 1rem;
-      z-index: 9;
-      width: 48 / $unit * 1rem;
-      height: 48 / $unit * 1rem;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    .header-title {
-      @include center();
-      width: 100%;
-      height: 58 / $unit * 1rem;
-      @include font-dpr(18px);
-      font-weight: 700;
-      color: #fff;
-    }
   }
   &-main {
     position: relative;
     width: 100%;
-    margin-top: -106 / $unit * 1rem;
+    margin-top: -88 / $unit * 1rem;
     padding: {
       left: 30 / $unit * 1rem;
       right: 30 / $unit * 1rem;
@@ -98,18 +73,16 @@ $unit: 75 !default;
           }
           .slide-icon {
             width: 60 / $unit * 1rem;
-            height: 60 / $unit * 1rem;
-            img {
-              width: 100%;
-              height: 100%;
+            i {
+              @include font-dpr(18px);
+              color: #FFAA5C;
             }
           }
           .slide-arrow {
             width: 50 / $unit * 1rem;
-            height: 50 / $unit * 1rem;
-            img {
-              width: 100%;
-              height: 100%;
+            i {
+              @include font-dpr(14px);
+              color: #999;
             }
           }
         }

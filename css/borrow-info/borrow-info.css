@@ -28,6 +28,10 @@ input {
 [v-cloak] {
   display: none; }
 
+html, body {
+  height: 100%;
+  width: 100%; }
+
 @font-face {
   font-family: Condensed;
   src: url("../DIN-Condensed-Bold.ttf"); }
@@ -39,40 +43,9 @@ input {
   .borrow-header {
     position: relative;
     width: 100%;
-    height: 5.16rem;
+    height: 3.6rem;
     padding-top: 0.6666666667rem;
     background-color: #FB9C27; }
-    .borrow-header .header-back {
-      position: absolute;
-      left: 0.4rem;
-      top: 0.7333333333rem;
-      z-index: 9;
-      width: 0.64rem;
-      height: 0.64rem; }
-      .borrow-header .header-back img {
-        width: 100%;
-        height: 100%; }
-    .borrow-header .header-title {
-      display: flex;
-      display: -webkit-box;
-      display: -webkit-flex;
-      align-items: center;
-      align-content: center;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -webkit-align-content: center;
-      justify-content: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      width: 100%;
-      height: 0.7733333333rem;
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff; }
-      [data-dpr="2"] .borrow-header .header-title {
-        font-size: 36px; }
-      [data-dpr="3"] .borrow-header .header-title {
-        font-size: 54px; }
     .borrow-header .header-detail {
       display: flex;
       display: -webkit-box;
@@ -86,7 +59,6 @@ input {
       -webkit-box-pack: space-around;
       -webkit-justify-content: space-around;
       width: 100%;
-      margin-top: 0.8933333333rem;
       padding-left: 0.6666666667rem;
       padding-right: 0.6666666667rem; }
       .borrow-header .header-detail .detail-item .item-num {
@@ -249,12 +221,9 @@ input {
             -webkit-box-flex: 1;
             -webkit-flex: 1;
             flex: 1; }
-            .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-img {
-              width: 0.5333333333rem;
-              height: 0.5333333333rem; }
-              .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-img img {
-                width: 100%;
-                height: 100%; }
+            .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .icon {
+              width: 0.6666666667rem;
+              height: 0.6666666667rem; }
             .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-text span:first-of-type {
               font-size: 15px;
               font-weight: 500;
@@ -272,9 +241,14 @@ input {
               [data-dpr="3"] .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-text span:last-of-type {
                 font-size: 36px; }
             .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-arrow {
-              width: 0.5333333333rem;
-              height: 0.5333333333rem;
               margin-left: 0.1333333333rem; }
+              .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-arrow i {
+                font-size: 14px;
+                color: #999; }
+                [data-dpr="2"] .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-arrow i {
+                  font-size: 28px; }
+                [data-dpr="3"] .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-arrow i {
+                  font-size: 42px; }
               .borrow-main .main-borrow .borrow-detail .detail-bank .bank-slide .slide-arrow img {
                 width: 100%;
                 height: 100%; }
@@ -459,6 +433,14 @@ input {
           width: 100%;
           height: 100%; }
       .borrow-main .main-protocol .protocol-text {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
         -webkit-box-flex: 1;
         -webkit-flex: 1;
         flex: 1;
@@ -469,6 +451,16 @@ input {
           font-size: 24px; }
         [data-dpr="3"] .borrow-main .main-protocol .protocol-text {
           font-size: 36px; }
+        .borrow-main .main-protocol .protocol-text i {
+          margin-right: 0.16rem;
+          font-size: 20px;
+          color: #FE9E41; }
+          [data-dpr="2"] .borrow-main .main-protocol .protocol-text i {
+            font-size: 40px; }
+          [data-dpr="3"] .borrow-main .main-protocol .protocol-text i {
+            font-size: 60px; }
+        .borrow-main .main-protocol .protocol-text .active {
+          color: #ccc; }
         .borrow-main .main-protocol .protocol-text .protocol {
           color: #359FF9; }
     .borrow-main .main-submit {

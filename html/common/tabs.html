@@ -11,9 +11,12 @@
     <script type="text/javascript" src="../../script/api.js" charset="utf-8"></script>
     <title>底部导航栏</title>
     <link rel="stylesheet" href="../../css/common/common.css">
+    <link rel="stylesheet" href="../../css/aui.css">
+    <link rel="stylesheet" href="../../css/aui-extends.css">
+    <link rel="stylesheet" href="../../iconfont/iconfont.css">
 </head>
 <body>
-    <footer class="footer" id="footer" v-cloak>
+    <!-- <footer class="footer" id="footer" v-cloak>
       <div class="footer-item active" onclick="gotoPage(this);">
         <img class="item-img" src="../../image/home/home.png">
         <img class="item-switch" src="../../image/home/home-lose.png">
@@ -29,34 +32,87 @@
         <img class="item-switch" src="../../image/home/mine-lose.png">
         <p class="item-name">我的</p>
       </div>
+    </footer> -->
+    <footer class="aui-bar aui-bar-tab page-tab-wrap" id="footer">
+        <div class="aui-bar-tab-item aui-active" id="home" tapmode>
+            <i class="iconfont icon-shouye font-size-45 text-light-grey"></i>
+            <div class="aui-bar-tab-label font-size-21">首页</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="iconfont icon-renzheng font-size-45 text-light-grey"></i>
+            <div class="aui-bar-tab-label font-size-21">认证</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="iconfont icon-wode font-size-45 text-light-grey"></i>
+            <div class="aui-bar-tab-label font-size-21">我的</div>
+        </div>
     </footer>
+    <script type="text/javascript" src="../../script/aui-tab.js"></script>
     <script type="text/javascript">
       apiready = function () {
         var footer = $api.byId('footer');
-        var measure = flexible.rem * flexible.dpr;
-        var TabHeight = Math.ceil(100 / 75 * measure);
-        var FrameGroupHeight = api.frameHeight - TabHeight;
-        $api.css(footer, 'height:' + TabHeight + 'px');
+      }
+      var page = {
+          previous: 1, //前一个点击的页面标记
+          current: 1 //当前点击的页面标记
+      };
+      apiready = function() {
+          setTabs(1);
+      }
 
-      }
-      // 点击导航栏切换状态
-      function gotoPage(tag) {
-          if (tag == $api.dom('#footer div.active')) return;
-          var navItem = $api.domAll('.footer-item');
-          index = 0;
-          for (var i = 0, len = navItem.length; i < len; i++) {
-              if (tag == navItem[i]) {
-                  index = i;
-              } else {
-                  $api.removeCls(navItem[i], 'active');
+      /**
+       * [setTabs 设置tab切换]
+       * @method      setTabs
+       */
+      function setTabs(index) {
+          var tab = new auiTab({
+                  element: $api.byId('footer'),
+                  index: index,
+                  repeatClick: false
+              },
+              function(ret) {
+                selectPage(ret.index);
               }
-          }
-          $api.addCls(navItem[index], 'active');
-          api.setFrameGroupIndex({
-              name: 'mainGroup',
-              index: index
-          });
+          );
       }
+
+      /**
+       * [selectPage 选择当前显示页]
+       * @method      selectPage
+       * @param       {[Number]}                index         [需要显示页面的页码]
+       */
+      function selectPage(index) {
+          if (page.current != index) {
+              page.previous = page.current;
+              page.current = index;
+              /* 选择主页 */
+              api.sendEvent({
+                  name: 'SwitchIndex',
+                  extra: {
+                      index: index - 1
+                  }
+              });
+          }
+      }
+
+      // 点击导航栏切换状态
+      // function gotoPage(tag) {
+      //     if (tag == $api.dom('#footer div.active')) return;
+      //     var navItem = $api.domAll('.footer-item');
+      //     index = 0;
+      //     for (var i = 0, len = navItem.length; i < len; i++) {
+      //         if (tag == navItem[i]) {
+      //             index = i;
+      //         } else {
+      //             $api.removeCls(navItem[i], 'active');
+      //         }
+      //     }
+      //     $api.addCls(navItem[index], 'active');
+      //     api.setFrameGroupIndex({
+      //         name: 'mainGroup',
+      //         index: index
+      //     });
+      // }
     </script>
 </body>
 

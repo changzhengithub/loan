@@ -9,6 +9,7 @@
     <title>借款记录tab</title>
     <link rel="stylesheet" type="text/css" href="../../css/api.css" />
     <link rel="stylesheet" href="../../css/recordTab/recordTab.css">
+    <link rel="stylesheet" href="../../iconfont/iconfont.css">
 </head>
 
 <body>
@@ -23,19 +24,19 @@
             <p class="leftside-title">借款</p>
             <p class="leftside-time">2018-11-06 12:40:20</p>
           </div>
-          <div class="info-rightside succeed"><span>￥</span><span>1500</span></div>
+          <div class="info-rightside fail"><span>￥</span><span>1500</span></div>
         </div>
         <div class="container-tag">
           <div class="tag-tip">
             <div class="tip-img">
-              <img src="../../image/succus.png">
+              <i class="iconfont icon-delete fail-color"></i>
             </div>
             <p class="tip-text">审核通过</p>
           </div>
           <div class="tag-btn">
-            <p class="btn-text" tapmode onclick="gotoPage('iou-detail');">查看详情</p>
+            <p class="btn-text">查看详情</p>
             <div class="btn-img">
-              <img src="../../image/mine/arrow.png">
+              <i class="iconfont icon-arrow-right"></i>
             </div>
           </div>
         </div>
@@ -56,14 +57,14 @@
         <div class="container-tag">
           <div class="tag-tip">
             <div class="tip-img">
-              <img src="../../image/warn.png">
+              <i class="iconfont icon-delete icon-tishi1 hint-color"></i>
             </div>
             <p class="tip-text">审核通过</p>
           </div>
           <div class="tag-btn">
             <p class="btn-text">查看详情</p>
             <div class="btn-img">
-              <img src="../../image/mine/arrow.png">
+              <i class="iconfont icon-arrow-right"></i>
             </div>
           </div>
         </div>
@@ -84,53 +85,26 @@
         <div class="container-tag">
           <div class="tag-tip">
             <div class="tip-img">
-              <img src="../../image/wait.png">
+              <i class="iconfont icon-dadaobiaozhun succus-color"></i>
             </div>
             <p class="tip-text">审核通过</p>
           </div>
           <div class="tag-btn">
             <p class="btn-text">查看详情</p>
             <div class="btn-img">
-              <img src="../../image/mine/arrow.png">
+              <i class="iconfont icon-arrow-right"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="recordTab-item">
-      <div class="item-bg">
-        <img src="../../image/floor.png">
-      </div>
-      <div class="item-container">
-        <div class="container-info">
-          <div class="info-leftside">
-            <p class="leftside-title">借款</p>
-            <p class="leftside-time">2018-11-06 12:40:20</p>
-          </div>
-          <div class="info-rightside fail"><span>￥</span><span>1500</span></div>
-        </div>
-        <div class="container-tag">
-          <div class="tag-tip">
-            <div class="tip-img">
-              <img src="../../image/wait.png">
-            </div>
-            <p class="tip-text">审核通过</p>
-          </div>
-          <div class="tag-btn">
-            <p class="btn-text">查看详情</p>
-            <div class="btn-img">
-              <img src="../../image/mine/arrow.png">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </section>
 
     <script type="text/javascript">
       apiready = function() {
         var recordTab = $api.byId('recordTab');
-        $api.css(recordTab, 'height:'+ api.frameHeight + 'px');
+        // $api.css(recordTab, 'height:'+ api.frameHeight + 'px');
         getToggle();
       }
       // 获取切换导航栏参数

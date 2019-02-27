@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/login/login.css">
+</head>
+
+<body>
+    <section class="login">
+        <header class="login-header">
+            <div class="header-back" onclick="goBack('login');">
+                <img src="../../image/left.png" alt="back">
+            </div>
+            <p class="header-title">登录</p>
+        </header>
+        <div class="login-logo">
+            <img src="../../image/alert.png">
+        </div>
+        <div class="login-form">
+            <ul class="form-list">
+                <li class="list-item">
+                    <div class="item-icon">
+                        <img src="../../image/user.png">
+                    </div>
+                    <input id="phone" type="number" pattern="[0-9]*" oninput="if(value.length>11) value = value.slice(0,11)" placeholder="请输入手机号码">
+                    <!-- <input type="number" placeholder="请输入手机号"> -->
+                </li>
+                <li class="list-item">
+                    <div class="item-icon">
+                        <img src="../../image/pwd.png">
+                    </div>
+                    <input id="password" type="password" maxlength="12" placeholder="请输入登录密码">
+                    <!-- <input type="number" placeholder="请输入密码"> -->
+                </li>
+            </ul>
+            <div class="form-protocol">
+                <p class="protocol-text"><span>登录即表示您同意</span><span>《立马花登录条款》</span></p>
+            </div>
+            <div class="form-submit">
+                <button class="submit-btn" onclick="rightLogin();">登录</button>
+            </div>
+        </div>
+        <div class="login-tip">
+            <p class="tip-text"><span>还未拥有账户,请</span><span onclick="gotoPage('register', 'login');">&nbsp;注册</span></p>
+        </div>
+    </section>
+    <script src="../../script/check.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        apiready = function() {};
+
+        // 点击登录
+        function rightLogin() {
+            var phone = $api.byId('phone');
+            var password = $api.byId('password');
+            var phoneNum = $api.val(phone);
+            var passwordNum = $api.val(password);
+            if (!checkPhone(phoneNum)) return;
+            if (!checkPassword(passwordNum)) return;
+            // 获取数据
+            api.ajax({
+                url: 'url',
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                data: {
+                    body: {
+                        phone: 'xxx',
+                        pwd: 'xxx'
+                    }
+                }
+            }, function(ret, err) {
+              console.log('登录成功');
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -9,15 +9,13 @@
     <title>借款信息</title>
     <link rel="stylesheet" type="text/css" href="../../css/api.css" />
     <link rel="stylesheet" href="../../css/borrow-info/borrow-info.css">
+    <link rel="stylesheet" href="../../iconfont/iconfont.css">
+    <script type="text/javascript" charset="utf-8" src="../../iconfont/iconfont.js"></script>
 </head>
 
 <body>
     <section class="borrow" id="borrow">
         <header class="borrow-header">
-            <div class="header-back" onclick="goBack();">
-                <img src="../../image/back.png" alt="back">
-            </div>
-            <p class="header-title"></p>
             <div class="header-detail">
                 <div class="detail-item">
                     <p class="item-num">1500</p>
@@ -45,13 +43,13 @@
                     <div class="detail-bank">
                         <p class="bank-title">到账银行卡</p>
                         <div class="bank-slide">
-                            <div class="slide-img">
-                                <img src="../../image/bank.png">
-                            </div>
-                            <p class="slide-text"><span>中国银行储蓄卡</span><span>(尾号:888）</span></p>
-                            <div class="slide-arrow">
-                                <img src="../../image/mine/arrow.png">
-                            </div>
+                          <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zhongguoyinhang"></use>
+                          </svg>
+                          <p class="slide-text"><span>中国银行储蓄卡</span><span>(尾号:888）</span></p>
+                          <div class="slide-arrow">
+                            <i class="iconfont icon-arrow-right"></i>
+                          </div>
                         </div>
                     </div>
                     <div class="detail-total">
@@ -90,11 +88,17 @@
               </div>
             </div>
             <div class="main-protocol">
-                <div class="protocol-select">
+                <!-- <div class="protocol-select">
                   <img src="../../image/pass.png">
                   <img style="display: none" src="../../image/fail.png">
-                </div>
-                <p class="protocol-text"><span>我阅读并同意 </span><span class="protocol">《平台服务协议》</span><span>、</span><span class="protocol">《授权扣款委托书》</span></p>
+                </div> -->
+                <p class="protocol-text" onclick="javascript: selectProtocol();">
+                  <i class="iconfont icon-dadaobiaozhun"></i>
+                  <span>我阅读并同意 </span>
+                  <span class="protocol">《平台服务协议》</span>
+                  <span>、</span>
+                  <span class="protocol">《授权扣款委托书》</span>
+                </p>
             </div>
             <div class="main-submit">
                 <button class="submit-btn" tapmode onclick="openToast();">确认提交</button>
@@ -128,8 +132,7 @@
           }
         }
 
-
-
+      // 点击确认弹出弹框
         function openToast() {
           api.openFrame({
               name: 'toast',
@@ -149,10 +152,10 @@
           });
         }
 
-        function goBack() {
-          api.closeFrame({
-            name: 'iou-detail'
-          });
+        // 协议选择
+        function selectProtocol() {
+          var protocol = $api.dom('.icon-dadaobiaozhun');
+          $api.toggleCls(protocol, 'active');
         }
     </script>
 </body>

@@ -28,49 +28,18 @@ input {
 [v-cloak] {
   display: none; }
 
-@font-face {
-  font-family: Condensed;
-  src: url("../DIN-Condensed-Bold.ttf"); }
+html, body {
+  height: 100%;
+  width: 100%; }
+
 .help {
   width: 100%;
   height: 100%; }
   .help-header {
     position: relative;
     width: 100%;
-    height: 3.9866666667rem;
-    padding-top: 0.6666666667rem;
+    height: 1.9466666667rem;
     background-color: #FB9C27; }
-    .help-header .header-back {
-      position: absolute;
-      left: 0.4rem;
-      top: 0.7333333333rem;
-      z-index: 9;
-      width: 0.64rem;
-      height: 0.64rem; }
-      .help-header .header-back img {
-        width: 100%;
-        height: 100%; }
-    .help-header .header-title {
-      display: flex;
-      display: -webkit-box;
-      display: -webkit-flex;
-      align-items: center;
-      align-content: center;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-      -webkit-align-content: center;
-      justify-content: center;
-      -webkit-box-pack: center;
-      -webkit-justify-content: center;
-      width: 100%;
-      height: 0.7733333333rem;
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff; }
-      [data-dpr="2"] .help-header .header-title {
-        font-size: 36px; }
-      [data-dpr="3"] .help-header .header-title {
-        font-size: 54px; }
   .help-main {
     position: relative;
     width: 100%;
@@ -99,9 +68,13 @@ input {
         .help-main .main-list .list-item .item-icon {
           width: 0.3466666667rem;
           height: 0.3866666667rem; }
-          .help-main .main-list .list-item .item-icon img {
-            width: 100%;
-            height: 100%; }
+          .help-main .main-list .list-item .item-icon i {
+            font-size: 15px;
+            color: #FFAA5C; }
+            [data-dpr="2"] .help-main .main-list .list-item .item-icon i {
+              font-size: 30px; }
+            [data-dpr="3"] .help-main .main-list .list-item .item-icon i {
+              font-size: 45px; }
         .help-main .main-list .list-item .item-detail {
           display: flex;
           display: -webkit-box;
@@ -131,19 +104,20 @@ input {
             -webkit-flex: 1;
             flex: 1;
             height: 100%;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             color: #333; }
             [data-dpr="2"] .help-main .main-list .list-item .item-detail .detail-text {
-              font-size: 28px; }
+              font-size: 26px; }
             [data-dpr="3"] .help-main .main-list .list-item .item-detail .detail-text {
+              font-size: 39px; }
+          .help-main .main-list .list-item .item-detail .detail-arrow i {
+            font-size: 14px;
+            color: #999; }
+            [data-dpr="2"] .help-main .main-list .list-item .item-detail .detail-arrow i {
+              font-size: 28px; }
+            [data-dpr="3"] .help-main .main-list .list-item .item-detail .detail-arrow i {
               font-size: 42px; }
-          .help-main .main-list .list-item .item-detail .detail-arrow {
-            width: 0.5333333333rem;
-            height: 0.5333333333rem; }
-            .help-main .main-list .list-item .item-detail .detail-arrow img {
-              width: 100%;
-              height: 100%; }
       .help-main .main-list .list-item:last-of-type .item-detail {
         border-bottom: none; }
 

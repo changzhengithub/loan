@@ -14,10 +14,6 @@
 <body>
     <section class="record" id="record">
         <header class="record-header" id="header">
-            <div class="header-back" onclick="goBack();">
-                <img src="../../image/back.png" alt="back">
-            </div>
-            <p class="header-title">借款记录</p>
             <div id="navbar" class="header-navbar">
                 <div tapmode class="navbar-item active" onclick="toggleTab(this);">全部</div>
                 <div tapmode class="navbar-item" onclick="toggleTab(this);">待还款</div>
@@ -25,18 +21,18 @@
                 <div tapmode class="navbar-item" onclick="toggleTab(this);">已逾期</div>
             </div>
         </header>
-        <main class="record-main">
-            <div id="container" class="main-cotainer">
-                <div class="container-tab">
-                    <!-- 要切换的内容 -->
-                </div>
-            </div>
+        <main id="main" class="record-main">
         </main>
     </section>
 
     <script type="text/javascript">
         apiready = function() {
           var head = $api.byId('header');
+          console.log(api.frameHeight);
+          var main = $api.byId('main');
+          var measure = flexible.rem * flexible.dpr;
+          var TabHeight = Math.ceil(110 / 75 * measure);
+          console.log(TabHeight);
           var navItem = $api.domAll('.navbar-item');
           var frames = [];
           for (var i = 0, len = navItem.length; i < len; i++) {
@@ -50,16 +46,16 @@
               })
           }
           var container = $api.byId('container');
-          $api.css(container, 'height:' + api.frameHeight - head.clientHeight + 'px');
+          // $api.css(container, 'height:' + api.frameHeight - head.clientHeight + 'px');
 
           api.openFrameGroup({
             name: 'recordTab',
             scrollEnabled: true,
             rect: {
               x: 0,
-              y: head.clientHeight,
+              y: head.offsetHeight,
               w: 'auto',
-              h: api.frameHeight - head.clientHeight
+              h: api.frameHeight - head.offsetHeight
             },
             index: 0,
             frames: frames
@@ -79,14 +75,6 @@
           });
         }
 
-        function goBack() {
-          api.closeFrame({
-            name: 'iou-record'
-          });
-          api.closeFrameGroup({
-            name: 'recordTab'
-          });
-        }
 
         // 点击导航栏切换状态
         function toggleTab(tag) {

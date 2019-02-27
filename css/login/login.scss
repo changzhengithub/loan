@@ -1,0 +1,138 @@
+@import "../_flex.scss";
+@import "../_reset.scss";
+$unit: 75 !default;
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  &-header {
+    position: relative;
+    width: 100%;
+    height: 172 / $unit * 1rem;
+    .header-back {
+      position: absolute;
+      left: 34 / $unit * 1rem;
+      top: 67 / $unit * 1rem;
+      z-index: 9;
+      width: 22 / $unit * 1rem;
+      height: 38 / $unit * 1rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .header-title {
+      @include center();
+      width: 100%;
+      height: 100%;
+      @include font-dpr(18px);
+      font-weight: 700;
+      color: #333;
+    }
+  }
+  &-logo {
+    width: 158 / $unit * 1rem;
+    height: 158 / $unit * 1rem;
+    margin: {
+      top: 36 / $unit * 1rem;
+      left: auto;
+      right: auto;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-form {
+    width: 100%;
+    padding: {
+      top: 120 / $unit * 1rem;
+      left: 75 / $unit * 1rem;
+      right: 75 / $unit * 1rem;
+    }
+    .form-list {
+      width: 100%;
+      .list-item {
+        @include vertical_center();
+        width: 100%;
+        height: 90 / $unit * 1rem;
+        margin: {
+          bottom: 30 / $unit * 1rem;
+        }
+        padding: {
+          left: 27 / $unit * 1rem;
+          right: 27 / $unit * 1rem;
+        }
+        border: 1px solid #ccc;
+        border-radius: 45 / $unit * 1rem;
+        .item-icon {
+          width: 30 / $unit * 1rem;
+          height: 36 / $unit * 1rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        input {
+          @include flex_1();
+          height: 100%;
+          padding: {
+            left: 30 / $unit * 1rem;
+          }
+          @include font-dpr(16px);
+          font-weight: 500;
+          color: #262626;
+          &::-webkit-input-placeholder {
+            color: #C2C2C2;
+          }
+        }
+      }
+    }
+    .form-protocol {
+      @include vertical-center();
+      width: 100%;
+      height: 120 / $unit * 1rem;
+      padding: {
+        left: 40 / $unit * 1rem;
+      }
+      @include font-dpr(14px);
+      font-weight: 500;
+      color: #999;
+      span:last-of-type {
+        color: #333;
+      }
+    }
+    .form-submit {
+      width: 100%;
+      height: 90 / $unit * 1rem;
+      // padding: {
+      //   left: 30 / $unit * 1rem;
+      //   right: 30 / $unit * 1rem;
+      // }
+
+      .submit-btn {
+        width: 100%;
+        height: 100%;
+        @include font-dpr(18px);
+        font-weight: 700;
+        color: #fff;
+        background: #FB9C27;
+        border-radius: 45 / $unit * 1rem;
+      }
+    }
+  }
+  &-tip {
+    @include center();
+    width: 100%;
+    margin: {
+      top: 210 / $unit * 1rem;
+    }
+    @include font-dpr(15px);
+    font-weight: 500;
+    color: #999;
+    span:last-of-type {
+      color: #FB9C27;
+    }
+  }
+}
