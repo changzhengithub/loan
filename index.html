@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+    <!-- <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" /> -->
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <script type="text/javascript" charset="utf-8" src="./script/flexible.js"></script>
     <script type="text/javascript" src="./script/api.js"></script>
@@ -15,14 +15,14 @@
 <body>
     <script type="text/javascript">
         apiready = function() {
-            var measure = flexible.rem * flexible.dpr;
+            var measure = flexible.rem / flexible.dpr;
       			var TabHeight = Math.ceil(100 / 75 * measure);
             var FrameGroupHeight = api.frameHeight - TabHeight;
-
             funIniGroup(FrameGroupHeight);
             funInitFrame(FrameGroupHeight, TabHeight);
             setListener();
         };
+
         function funInitFrame(FrameGroupHeight, TabHeight) {
             var index = $api.byId('index');
             api.openFrame({
@@ -69,7 +69,7 @@
         }
         ///设置监听器
         function setListener() {
-          //底部菜单切换时，需要刷新首页的联系客服和立即申请按钮显示以及兑现页面是否显示、刷新认证状态
+          //底部菜单切换，刷新首页
           api.addEventListener({
             name: 'SwitchIndex'
           }, function(ret, err) {

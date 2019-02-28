@@ -34,6 +34,7 @@ html, body {
 
 .iou {
   width: 100%;
+  height: 100%;
   padding-bottom: 0.4rem;
   background-color: #F6F6F6; }
   .iou-header {

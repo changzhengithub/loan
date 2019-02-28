@@ -39,7 +39,8 @@ html, body {
   flex-direction: column;
   -webkit-flex-direction: column;
   width: 100%;
-  background-color: #ccc; }
+  height: 100%;
+  background-color: #F6F6F6; }
   .record-header {
     position: relative;
     width: 100%;

@@ -32,9 +32,8 @@ html, body {
   height: 100%;
   width: 100%; }
 
-.footer {
-  width: 100%;
-  height: 1.3333333333rem;
-  background-color: #fff; }
+html, body {
+  height: 100%;
+  background-color: #f0f0f0; }
 
-/*# sourceMappingURL=common.css.map */
+/*# sourceMappingURL=index.css.map */

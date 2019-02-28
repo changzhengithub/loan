@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 <div class="head-progress" id="circle">
-                    <span class="progress-value" id="progress-value"></span>
+                    <p class="progress-value" id="progress-value"></p>
                 </div>
             </div>
             <ul class="mian-progress">
@@ -89,19 +89,24 @@
 
     <script type="text/javascript">
         apiready = function() {
-            var animate;
-            var arcProgress = api.require('arcProgress');
             var circle = $api.byId('circle');
             var progress = $api.byId('progress-value');
             var offset = $api.offset(circle);
+            var offLeft = Math.ceil(offset.l / flexible.dpr)
+            var offTop = Math.ceil(offset.t / flexible.dpr)
+            var offWidth = Math.ceil(offset.w / flexible.dpr)
+            var offHeight = Math.ceil(offset.h / flexible.dpr)
+            var arcProgress = api.require('arcProgress');
             arcProgress.open({
                 type: 'annular',
-                centerX: offset.l + (offset.w / 2),
-                centerY: offset.t + (offset.h / 2),
-                radius: offset.h / 2,
+                centerX: offLeft,
+                centerY: offTop,
+                centerX: offLeft + (offWidth / 2),
+                centerY: offTop + (offHeight / 2),
+                radius: offWidth / 2,
                 bgColor: '#EEEEEE',
                 pgColor: '#FB9C27',
-                loopWidth: offset.w / 20,
+                loopWidth: offWidth / 25,
                 fixedOn: api.frameName,
                 fixed: false
             }, function(ret, err) {
@@ -112,11 +117,11 @@
             });
             // 设置进度条数值
             function setValue(obj) {
-              // ****** 进度条取值 *****
+                // ****** 进度条取值 *****
                 var proVal = 25;
-                var timer = parseInt(2500 / proVal);
+                var timer = parseInt(1000 / proVal);
                 $api.text(progress, obj.value + '%');
-                animate = setTimeout(function() {
+                var animate = setTimeout(function() {
                     arcProgress.setValue({
                         id: obj.id,
                         value: ++obj.value

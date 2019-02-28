@@ -88,10 +88,6 @@
               </div>
             </div>
             <div class="main-protocol">
-                <!-- <div class="protocol-select">
-                  <img src="../../image/pass.png">
-                  <img style="display: none" src="../../image/fail.png">
-                </div> -->
                 <p class="protocol-text" onclick="javascript: selectProtocol();">
                   <i class="iconfont icon-dadaobiaozhun"></i>
                   <span>我阅读并同意 </span>
@@ -113,22 +109,18 @@
     </section>
 
     <script type="text/javascript">
-        var onOff = false;
         apiready = function() {
           var borrow = $api.byId('borrow');
-          $api.css(borrow, 'height:'+ api.winHeight + 'px');
         };
 
         function openDetail(self) {
           var detail = $api.byId('detail');
+          $api.toggleCls(detail, 'active');
+          var onOff = $api.hasCls(detail,'active');
           if (!onOff) {
-            self.innerText = '收起详情'
-            $api.css(detail, 'display: block');
-            onOff = true;
-          } else {
             self.innerText = '展开详情'
-            $api.css(detail, 'display: none');
-            onOff = false;
+          } else {
+            self.innerText = '收起详情'
           }
         }
 

@@ -35,16 +35,10 @@ html, body {
 @font-face {
   font-family: Condensed;
   src: url("../DIN-Condensed-Bold.ttf"); }
-.headerIos {
-  padding-top: 80px; }
-
-.headerAnd {
-  padding-top: -25px; }
-
 .home {
   width: 100%;
-  overflow: hidden;
-  background-color: #ccc; }
+  height: 100%;
+  background-color: #FAFAFA; }
   .home-banner {
     width: 100%;
     height: 6.4266666667rem; }

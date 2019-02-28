@@ -28,11 +28,9 @@
     <script type="text/javascript">
         apiready = function() {
           var head = $api.byId('header');
-          console.log(api.frameHeight);
           var main = $api.byId('main');
-          var measure = flexible.rem * flexible.dpr;
+          var measure = flexible.rem / flexible.dpr;
           var TabHeight = Math.ceil(110 / 75 * measure);
-          console.log(TabHeight);
           var navItem = $api.domAll('.navbar-item');
           var frames = [];
           for (var i = 0, len = navItem.length; i < len; i++) {
@@ -45,17 +43,15 @@
                   bounces: false
               })
           }
-          var container = $api.byId('container');
-          // $api.css(container, 'height:' + api.frameHeight - head.clientHeight + 'px');
 
           api.openFrameGroup({
             name: 'recordTab',
             scrollEnabled: true,
             rect: {
               x: 0,
-              y: head.offsetHeight,
+              y: TabHeight,
               w: 'auto',
-              h: api.frameHeight - head.offsetHeight
+              h: api.frameHeight - TabHeight
             },
             index: 0,
             frames: frames

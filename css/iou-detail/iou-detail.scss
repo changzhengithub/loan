@@ -5,12 +5,11 @@ $unit: 75 !default;
 .iou {
   // position: relative;
   width: 100%;
-  // height: 100%;
+  height: 100%;
   padding: {
     bottom: 30 / $unit * 1rem;
   }
   background-color: #F6F6F6;
-  // overflow: auto;
   &-header {
     position: relative;
     width: 100%;

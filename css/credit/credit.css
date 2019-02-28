@@ -37,7 +37,8 @@ html, body {
   src: url("../DIN-Condensed-Bold.ttf"); }
 .credit {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: #F6F6F6; }
   .credit-header {
     width: 100%;
     height: 2.3066666667rem;
@@ -136,14 +137,15 @@ html, body {
         height: 2.6666666667rem; }
         .credit-main .main-head .head-progress .progress-value {
           margin-top: 0.2666666667rem;
+          padding-left: 0.1333333333rem;
           font-family: Condensed;
-          font-size: 40px;
+          font-size: 30px;
           font-weight: 700;
           color: #FF9007; }
           [data-dpr="2"] .credit-main .main-head .head-progress .progress-value {
-            font-size: 80px; }
+            font-size: 60px; }
           [data-dpr="3"] .credit-main .main-head .head-progress .progress-value {
-            font-size: 120px; }
+            font-size: 90px; }
     .credit-main .mian-progress {
       width: 100%;
       margin-top: 0.52rem; }
