@@ -33,23 +33,20 @@ html, body {
   width: 100%; }
 
 .login {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #fff; }
   .login-header {
     position: relative;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    -webkit-box-pack: flex-end;
+    -webkit-justify-content: flex-end;
     width: 100%;
-    height: 2.2933333333rem; }
-    .login-header .header-back {
-      position: absolute;
-      left: 0.4533333333rem;
-      top: 0.8933333333rem;
-      z-index: 9;
-      width: 0.2933333333rem;
-      height: 0.5066666667rem; }
-      .login-header .header-back img {
-        width: 100%;
-        height: 100%; }
+    height: 1.96rem;
+    padding-top: 0.56rem; }
     .login-header .header-title {
       display: flex;
       display: -webkit-box;
@@ -62,8 +59,8 @@ html, body {
       justify-content: center;
       -webkit-box-pack: center;
       -webkit-justify-content: center;
-      width: 100%;
-      height: 100%;
+      width: 2rem;
+      height: 1.4rem;
       font-size: 18px;
       font-weight: 700;
       color: #333; }
@@ -72,59 +69,22 @@ html, body {
       [data-dpr="3"] .login-header .header-title {
         font-size: 54px; }
   .login-logo {
-    width: 2.1066666667rem;
-    height: 2.1066666667rem;
-    margin-top: 0.48rem;
-    margin-left: auto;
-    margin-right: auto; }
-    .login-logo img {
-      width: 100%;
-      height: 100%; }
-  .login-form {
     width: 100%;
-    padding-top: 1.6rem;
-    padding-left: 1rem;
-    padding-right: 1rem; }
-    .login-form .form-list {
-      width: 100%; }
-      .login-form .form-list .list-item {
-        display: flex;
-        display: -webkit-box;
-        display: -webkit-flex;
-        align-items: center;
-        align-content: center;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -webkit-align-content: center;
+    height: 1.4666666667rem;
+    margin-top: 0.2rem; }
+    .login-logo .logo {
+      width: 1.4666666667rem;
+      height: 1.4666666667rem;
+      margin: 0 auto; }
+      .login-logo .logo img {
         width: 100%;
-        height: 1.2rem;
-        margin-bottom: 0.4rem;
-        padding-left: 0.36rem;
-        padding-right: 0.36rem;
-        border: 1px solid #ccc;
-        border-radius: 0.6rem; }
-        .login-form .form-list .list-item .item-icon {
-          width: 0.4rem;
-          height: 0.48rem; }
-          .login-form .form-list .list-item .item-icon img {
-            width: 100%;
-            height: 100%; }
-        .login-form .form-list .list-item input {
-          -webkit-box-flex: 1;
-          -webkit-flex: 1;
-          flex: 1;
-          height: 100%;
-          padding-left: 0.4rem;
-          font-size: 16px;
-          font-weight: 500;
-          color: #262626; }
-          [data-dpr="2"] .login-form .form-list .list-item input {
-            font-size: 32px; }
-          [data-dpr="3"] .login-form .form-list .list-item input {
-            font-size: 48px; }
-          .login-form .form-list .list-item input::-webkit-input-placeholder {
-            color: #C2C2C2; }
-    .login-form .form-protocol {
+        height: 100%; }
+  .login-content {
+    width: 100%;
+    margin-top: 1.2rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem; }
+    .login-content .content-nav {
       display: flex;
       display: -webkit-box;
       display: -webkit-flex;
@@ -133,55 +93,191 @@ html, body {
       -webkit-box-align: center;
       -webkit-align-items: center;
       -webkit-align-content: center;
+      justify-content: space-between;
+      -webkit-box-pack: space-between;
+      -webkit-justify-content: space-between;
       width: 100%;
-      height: 1.6rem;
-      padding-left: 0.5333333333rem;
-      font-size: 14px;
-      font-weight: 500;
-      color: #999; }
-      [data-dpr="2"] .login-form .form-protocol {
-        font-size: 28px; }
-      [data-dpr="3"] .login-form .form-protocol {
-        font-size: 42px; }
-      .login-form .form-protocol span:last-of-type {
-        color: #333; }
-    .login-form .form-submit {
-      width: 100%;
-      height: 1.2rem; }
-      .login-form .form-submit .submit-btn {
+      height: 0.9066666667rem;
+      border-bottom: 1px solid #DBDBDB; }
+      .login-content .content-nav .nav-item {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        width: 50%;
+        height: 100%; }
+        .login-content .content-nav .nav-item .item-name {
+          position: relative;
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          justify-content: center;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          height: 100%;
+          font-size: 15px;
+          font-weight: 700;
+          color: #262626; }
+          [data-dpr="2"] .login-content .content-nav .nav-item .item-name {
+            font-size: 30px; }
+          [data-dpr="3"] .login-content .content-nav .nav-item .item-name {
+            font-size: 45px; }
+        .login-content .content-nav .nav-item .active:after {
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          z-index: 9;
+          display: block;
+          content: '';
+          width: 100%;
+          height: 3px;
+          background: #FB9C27; }
+    .login-content .content-tab {
+      width: 100%; }
+      .login-content .content-tab .tab-list {
         width: 100%;
-        height: 100%;
-        font-size: 18px;
-        font-weight: 700;
-        color: #fff;
-        background: #FB9C27;
-        border-radius: 0.6rem; }
-        [data-dpr="2"] .login-form .form-submit .submit-btn {
-          font-size: 36px; }
-        [data-dpr="3"] .login-form .form-submit .submit-btn {
-          font-size: 54px; }
-  .login-tip {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    align-items: center;
-    align-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -webkit-align-content: center;
-    justify-content: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    width: 100%;
-    margin-top: 2.8rem;
-    font-size: 15px;
-    font-weight: 500;
-    color: #999; }
-    [data-dpr="2"] .login-tip {
-      font-size: 30px; }
-    [data-dpr="3"] .login-tip {
-      font-size: 45px; }
-    .login-tip span:last-of-type {
-      color: #FB9C27; }
+        margin-bottom: 1.2rem; }
+        .login-content .content-tab .tab-list .list-item {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          width: 100%;
+          height: 1.72rem;
+          padding-top: 0.5333333333rem;
+          border-bottom: 1px solid #DBDBDB; }
+          .login-content .content-tab .tab-list .list-item i {
+            font-size: 24px;
+            color: #C2C2C2; }
+            [data-dpr="2"] .login-content .content-tab .tab-list .list-item i {
+              font-size: 48px; }
+            [data-dpr="3"] .login-content .content-tab .tab-list .list-item i {
+              font-size: 72px; }
+          .login-content .content-tab .tab-list .list-item .icon-delete {
+            display: none;
+            font-size: 16px;
+            margin-right: 0.6rem; }
+            [data-dpr="2"] .login-content .content-tab .tab-list .list-item .icon-delete {
+              font-size: 32px; }
+            [data-dpr="3"] .login-content .content-tab .tab-list .list-item .icon-delete {
+              font-size: 48px; }
+          .login-content .content-tab .tab-list .list-item input {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            height: 100%;
+            padding-left: 0.28rem;
+            font-size: 16px;
+            font-weight: 500;
+            color: #262626; }
+            [data-dpr="2"] .login-content .content-tab .tab-list .list-item input {
+              font-size: 32px; }
+            [data-dpr="3"] .login-content .content-tab .tab-list .list-item input {
+              font-size: 48px; }
+            .login-content .content-tab .tab-list .list-item input::-webkit-input-placeholder {
+              color: #C2C2C2; }
+          .login-content .content-tab .tab-list .list-item .item-code {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            align-items: center;
+            align-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -webkit-align-content: center;
+            height: 100%; }
+            .login-content .content-tab .tab-list .list-item .item-code i {
+              font-size: 24px;
+              color: #C2C2C2; }
+              [data-dpr="2"] .login-content .content-tab .tab-list .list-item .item-code i {
+                font-size: 48px; }
+              [data-dpr="3"] .login-content .content-tab .tab-list .list-item .item-code i {
+                font-size: 72px; }
+            .login-content .content-tab .tab-list .list-item .item-code input {
+              width: 4rem;
+              height: 100%;
+              padding-left: 0.28rem;
+              font-size: 16px;
+              font-weight: 500;
+              color: #262626; }
+              [data-dpr="2"] .login-content .content-tab .tab-list .list-item .item-code input {
+                font-size: 32px; }
+              [data-dpr="3"] .login-content .content-tab .tab-list .list-item .item-code input {
+                font-size: 48px; }
+              .login-content .content-tab .tab-list .list-item .item-code input::-webkit-input-placeholder {
+                color: #C2C2C2; }
+          .login-content .content-tab .tab-list .list-item .item-btn {
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            align-items: center;
+            align-content: center;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -webkit-align-content: center;
+            justify-content: center;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            width: 2.6666666667rem;
+            height: 100%; }
+            .login-content .content-tab .tab-list .list-item .item-btn .btn-text {
+              width: 100%;
+              height: 100%;
+              font-size: 15px;
+              font-weight: 500;
+              color: #FB9C27; }
+              [data-dpr="2"] .login-content .content-tab .tab-list .list-item .item-btn .btn-text {
+                font-size: 30px; }
+              [data-dpr="3"] .login-content .content-tab .tab-list .list-item .item-btn .btn-text {
+                font-size: 45px; }
+          .login-content .content-tab .tab-list .list-item .ready {
+            color: #ccc !important; }
+      .login-content .content-tab .item-button {
+        width: 8.9333333333rem;
+        height: 1.2rem;
+        margin: 0 auto; }
+        .login-content .content-tab .item-button .button {
+          width: 100%;
+          height: 100%;
+          font-size: 17px;
+          font-weight: 500;
+          color: #fff;
+          background: #FB9C27;
+          border-radius: 0.6rem; }
+          [data-dpr="2"] .login-content .content-tab .item-button .button {
+            font-size: 34px; }
+          [data-dpr="3"] .login-content .content-tab .item-button .button {
+            font-size: 51px; }
+      .login-content .content-tab .item-hint {
+        width: 100%;
+        margin-top: 1.04rem;
+        padding-right: 0.4rem;
+        text-align: right;
+        font-size: 14px;
+        font-weight: 500;
+        color: #262626; }
+        [data-dpr="2"] .login-content .content-tab .item-hint {
+          font-size: 28px; }
+        [data-dpr="3"] .login-content .content-tab .item-hint {
+          font-size: 42px; }
 
 /*# sourceMappingURL=login.css.map */

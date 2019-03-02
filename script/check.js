@@ -52,7 +52,7 @@ function checkPassword(password) {
 }
 
 // 跳转到新页面
-function gotoPage(page, current) {
+function gotoPage(page) {
   // api.closeFrame({
   //   name: current
   // });
@@ -88,6 +88,26 @@ function alertMsg(msg) {
     duration: 2000,
     location: 'middle'
   });
+}
+
+// 清楚输入框值
+function clearInputVal(self) {
+  var inputVal = $api.prev(self);
+  $api.val(inputVal,'');
+  inputVal.focus()
+  $api.css(self, 'display: none');
+}
+
+// 设置input和清除按钮
+function setInputVal(self, num) {
+  if (!self.value) {
+    $api.css($api.next(self), 'display: none;');
+  } else {
+    if (num) {
+      if(self.value.length > num) self.value = self.value.slice(0, num)
+    }
+    $api.css($api.next(self), 'display: block;');
+  }
 }
 
 // 禁止点击按钮

@@ -3,136 +3,195 @@
 $unit: 75 !default;
 
 .login {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   &-header {
     position: relative;
+    $param: (flex flex) (justifyContent flex-end);
+    @include flexSet($param);
     width: 100%;
-    height: 172 / $unit * 1rem;
-    .header-back {
-      position: absolute;
-      left: 34 / $unit * 1rem;
-      top: 67 / $unit * 1rem;
-      z-index: 9;
-      width: 22 / $unit * 1rem;
-      height: 38 / $unit * 1rem;
-      img {
-        width: 100%;
-        height: 100%;
-      }
+    height: 147 / $unit * 1rem;
+    padding: {
+      top: 42 / $unit * 1rem;
     }
     .header-title {
       @include center();
-      width: 100%;
-      height: 100%;
+      width: 150 / $unit * 1rem;
+      height: 105 / $unit * 1rem;
       @include font-dpr(18px);
       font-weight: 700;
       color: #333;
     }
   }
   &-logo {
-    width: 158 / $unit * 1rem;
-    height: 158 / $unit * 1rem;
-    margin: {
-      top: 36 / $unit * 1rem;
-      left: auto;
-      right: auto;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  &-form {
     width: 100%;
-    padding: {
-      top: 120 / $unit * 1rem;
-      left: 75 / $unit * 1rem;
-      right: 75 / $unit * 1rem;
+    height: 110 / $unit * 1rem;
+    margin: {
+      top: 15 / $unit * 1rem;
     }
-    .form-list {
-      width: 100%;
-      .list-item {
-        @include vertical_center();
-        width: 100%;
-        height: 90 / $unit * 1rem;
-        margin: {
-          bottom: 30 / $unit * 1rem;
-        }
-        padding: {
-          left: 27 / $unit * 1rem;
-          right: 27 / $unit * 1rem;
-        }
-        border: 1px solid #ccc;
-        border-radius: 45 / $unit * 1rem;
-        .item-icon {
-          width: 30 / $unit * 1rem;
-          height: 36 / $unit * 1rem;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-        input {
-          @include flex_1();
-          height: 100%;
-          padding: {
-            left: 30 / $unit * 1rem;
-          }
-          @include font-dpr(16px);
-          font-weight: 500;
-          color: #262626;
-          &::-webkit-input-placeholder {
-            color: #C2C2C2;
-          }
-        }
-      }
-    }
-    .form-protocol {
-      @include vertical-center();
-      width: 100%;
-      height: 120 / $unit * 1rem;
-      padding: {
-        left: 40 / $unit * 1rem;
-      }
-      @include font-dpr(14px);
-      font-weight: 500;
-      color: #999;
-      span:last-of-type {
-        color: #333;
-      }
-    }
-    .form-submit {
-      width: 100%;
-      height: 90 / $unit * 1rem;
-      // padding: {
-      //   left: 30 / $unit * 1rem;
-      //   right: 30 / $unit * 1rem;
-      // }
-
-      .submit-btn {
+    .logo {
+      width: 110 / $unit * 1rem;
+      height: 110 / $unit * 1rem;
+      margin: 0 auto;
+      img {
         width: 100%;
         height: 100%;
-        @include font-dpr(18px);
-        font-weight: 700;
-        color: #fff;
-        background: #FB9C27;
-        border-radius: 45 / $unit * 1rem;
       }
     }
   }
-  &-tip {
-    @include center();
+  &-content {
     width: 100%;
     margin: {
-      top: 210 / $unit * 1rem;
+      top: 90 / $unit * 1rem;
     }
-    @include font-dpr(15px);
-    font-weight: 500;
-    color: #999;
-    span:last-of-type {
-      color: #FB9C27;
+    padding: {
+      left: 30 / $unit * 1rem;
+      right: 30 / $unit * 1rem;
+    }
+    .content-nav {
+      @include vertical_center_horizontal_between();
+      width: 100%;
+      height: 68 / $unit * 1rem;
+      border-bottom: 1px solid #DBDBDB;
+      .nav-item {
+        @include center();
+        width: 50%;
+        height: 100%;
+        .item-name {
+          position: relative;
+          @include center();
+          height: 100%;
+          @include font-dpr(15px);
+          font-weight: 700;
+          color: #262626;
+        }
+        .active {
+          &:after {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            z-index: 9;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 3px;
+            background: #FB9C27;
+          }
+        }
+      }
+    }
+    .content-tab {
+      width: 100%;
+      .tab-list {
+        width: 100%;
+        margin: {
+          bottom: 90 / $unit * 1rem;
+        }
+        .list-item {
+          @include vertical_center();
+          width: 100%;
+          height: 129 / $unit * 1rem;
+
+          padding: {
+            top: 40 / $unit * 1rem;
+          }
+          border-bottom: 1px solid #DBDBDB;
+          i {
+            @include font-dpr(24px);
+            color: #C2C2C2;
+          }
+          .icon-delete {
+            display: none;
+            @include font-dpr(16px);
+            margin: {
+              right: 45 / $unit * 1rem;
+            }
+          }
+          input {
+            @include flex_1();
+            height: 100%;
+            padding: {
+              left: 21 / $unit * 1rem;
+            }
+            @include font-dpr(16px);
+            font-weight: 500;
+            color: #262626;
+            &::-webkit-input-placeholder {
+              color: #C2C2C2;
+            }
+          }
+          .item-code {
+            @include flex_1();
+            @include vertical_center();
+            // width: 400 / $unit * 1rem;
+            height: 100%;
+            i {
+              @include font-dpr(24px);
+              color: #C2C2C2;
+            }
+            input {
+              // @include flex_1();
+              width: 300 / $unit * 1rem;
+              height: 100%;
+              padding: {
+                left: 21 / $unit * 1rem;
+              }
+              @include font-dpr(16px);
+              font-weight: 500;
+              color: #262626;
+              &::-webkit-input-placeholder {
+                color: #C2C2C2;
+              }
+            }
+          }
+          .item-btn {
+            @include center();
+            width: 200 / $unit * 1rem;
+            height: 100%;
+            .btn-text {
+              width: 100%;
+              height: 100%;
+              @include font-dpr(15px);
+              font-weight: 500;
+              color: #FB9C27;
+            }
+          }
+          .ready {
+            color: #ccc !important;
+          }
+        }
+
+      }
+      .item-button {
+        width: 670 / $unit * 1rem;
+        height: 90 / $unit * 1rem;
+        margin: 0 auto;
+
+
+        .button {
+          width: 100%;
+          height: 100%;
+          @include font-dpr(17px);
+          font-weight: 500;
+          color: #fff;
+          background: #FB9C27;
+          border-radius: 45 / $unit * 1rem;
+        }
+      }
+      .item-hint {
+        width: 100%;
+        margin: {
+          top: 78 / $unit * 1rem;
+        }
+        padding: {
+          right: 30 / $unit * 1rem;
+        }
+        text-align: right;
+        @include font-dpr(14px);
+        font-weight: 500;
+        color: #262626;
+      }
     }
   }
 }
