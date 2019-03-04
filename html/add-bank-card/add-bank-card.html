@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>添加银行卡</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/add-bank-card/add-bank-card.css">
+    <link rel="stylesheet" href="../../iconfont/iconfont.css">
+</head>
+
+<body>
+    <section class="add-bank-card">
+      <div class="card-list">
+        <div class="list-item">
+          <div class="item-text"><span>银行卡号</span></div>
+          <div class="item-input">
+            <input id="cardNo" type="number" placeholder="请输入卡号">
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="item-text"><span>银行预留手机号</span></div>
+          <div class="item-input">
+            <input id="phone" type="number" pattern="[0-9]*" oninput="javascript: setInputVal(this, 11);" placeholder="请输入手机号码">
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="item-text"><span>验证码</span></div>
+          <div class="item-code">
+            <input id="code" class="item-input" type="number" pattern="[0-9]*" oninput="if(value.length > 6) value = value.slice(0,6);" placeholder="请输入验证码">
+            <div class="code-btn">
+              <button id="smscode" class="btn-text" tapmode onclick="javascript: getVerificationCode();">获取验证码</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-submit">
+          <button class="submit-button" tapmode onclick="javascript: submit();">提交</button>
+      </div>
+    </section>
+    <script src="../../script/check.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        apiready = function() {};
+
+        // 获取验证码
+        function getVerificationCode() {
+          var phone = $api.byId('phone');
+          var phoneNum = $api.val(phone);
+          if (!checkPhone(phoneNum)) return;
+            readyToResend();
+        }
+        /**
+        * [readyToResend 等待下一次发送验证码]
+        */
+        function readyToResend() {
+          var btnDom = $api.byId('smscode');
+          $api.attr(btnDom, 'disabled', 'disabled');
+          $api.addCls(btnDom, 'ready');
+          var second = 59;
+          var animation = setInterval(function() {
+            if (second > 0) {
+              $api.text(btnDom, second + '秒后重试');
+              second--;
+            } else {
+              clearInterval(animation);
+              $api.text(btnDom, '获取验证码');
+              $api.removeCls(btnDom, 'ready');
+              $api.removeAttr(btnDom, 'disabled');
+            }
+          }, 1000);
+        }
+        // 点击提交
+        function submit() {
+          var phone = $api.byId('phone');
+          var cardNo = $api.byId('cardNo');
+          var code = $api.byId('code');
+          var phoneNum = $api.val(phone);
+          var card = $api.val(cardNo);
+          var codeNum = $api.val(code);
+          if (!checkBankNo(card)) return;
+          if (!checkPhone(phoneNum)) return;
+          if (!checkCode(codeNum)) return;
+          // 获取数据
+          api.ajax({
+              url: 'url',
+              method: 'post',
+              headers: {
+                  'Content-Type': 'application/json;charset=utf-8'
+              },
+              data: {
+                  body: {
+                      phone: 'xxx',
+                      code: 'xxx'
+                  }
+              }
+          }, function(ret, err) {
+            console.log('登录成功');
+          });
+        }
+    </script>
+</body>
+
+</html>

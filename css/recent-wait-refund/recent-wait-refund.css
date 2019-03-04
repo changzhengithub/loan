@@ -1,0 +1,206 @@
+@charset "UTF-8";
+/*
+项目采用采用淘宝flexible.js来进行页面适配，flexible.js会根据手机的dpr来配置页面跟元素的字体大小，然后采用rem来进行适配。
+根据设计图的十分之一来确定元素为多少rem     x  =  量取实际尺寸 / 页面宽度的十分之一  *  1rem
+$unit设置为设计图的十分之一，宽高通过设计图的实际宽高除以 $unit * 1rem计算出为多少REM,
+这样无论屏幕怎么变化只需得到HTML的font-size值(flexible会自动变换fontsize值)乘以REM就是变化后的宽高；
+ flexible根据dpr的不同来设置字体大小，引入时传入1dpr的字体大小，设计图大小 / 2
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ol,
+ul,
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: none; }
+
+button,
+input {
+  outline: none;
+  border: none;
+  background: none; }
+
+[v-cloak] {
+  display: none; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+.refund {
+  width: 100%;
+  height: 100%;
+  padding-top: 0.4rem;
+  padding-left: 0.2666666667rem;
+  padding-right: 0.2666666667rem;
+  background: #FAFAFA; }
+  .refund .refund-item {
+    position: relative;
+    width: 100%;
+    height: 3.9466666667rem;
+    margin-bottom: 0.4rem; }
+    .refund .refund-item .item-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%; }
+      .refund .refund-item .item-bg img {
+        width: 100%;
+        height: 100%; }
+    .refund .refund-item .item-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%; }
+      .refund .refund-item .item-container .container-info {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        justify-content: space-between;
+        -webkit-box-pack: space-between;
+        -webkit-justify-content: space-between;
+        width: 100%;
+        height: 2.1333333333rem;
+        padding-top: 0.2666666667rem;
+        padding-left: 0.6666666667rem;
+        padding-right: 0.5333333333rem; }
+        .refund .refund-item .item-container .container-info .info-leftside .leftside-title {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          height: 0.8rem;
+          font-size: 15px;
+          font-weight: 700;
+          color: #333; }
+          [data-dpr="2"] .refund .refund-item .item-container .container-info .info-leftside .leftside-title {
+            font-size: 30px; }
+          [data-dpr="3"] .refund .refund-item .item-container .container-info .info-leftside .leftside-title {
+            font-size: 45px; }
+        .refund .refund-item .item-container .container-info .info-leftside .leftside-time {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center;
+          height: 0.8rem;
+          font-size: 12px;
+          font-weight: 500;
+          color: #999; }
+          [data-dpr="2"] .refund .refund-item .item-container .container-info .info-leftside .leftside-time {
+            font-size: 24px; }
+          [data-dpr="3"] .refund .refund-item .item-container .container-info .info-leftside .leftside-time {
+            font-size: 36px; }
+          .refund .refund-item .item-container .container-info .info-leftside .leftside-time span:first-of-type {
+            margin-right: 0.1333333333rem; }
+        .refund .refund-item .item-container .container-info .info-rightside {
+          font-weight: 700;
+          color: #666; }
+          .refund .refund-item .item-container .container-info .info-rightside span:first-of-type {
+            font-size: 15px; }
+            [data-dpr="2"] .refund .refund-item .item-container .container-info .info-rightside span:first-of-type {
+              font-size: 30px; }
+            [data-dpr="3"] .refund .refund-item .item-container .container-info .info-rightside span:first-of-type {
+              font-size: 45px; }
+          .refund .refund-item .item-container .container-info .info-rightside span:last-of-type {
+            font-size: 30px; }
+            [data-dpr="2"] .refund .refund-item .item-container .container-info .info-rightside span:last-of-type {
+              font-size: 60px; }
+            [data-dpr="3"] .refund .refund-item .item-container .container-info .info-rightside span:last-of-type {
+              font-size: 90px; }
+      .refund .refund-item .item-container .container-tag {
+        display: flex;
+        display: -webkit-box;
+        display: -webkit-flex;
+        align-items: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -webkit-align-content: center;
+        justify-content: space-between;
+        -webkit-box-pack: space-between;
+        -webkit-justify-content: space-between;
+        width: 100%;
+        height: 1.3333333333rem;
+        padding-left: 0.6rem;
+        padding-right: 0.4666666667rem; }
+        .refund .refund-item .item-container .container-tag .tag-tip {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center; }
+          .refund .refund-item .item-container .container-tag .tag-tip .tip-img {
+            width: 0.5333333333rem; }
+            .refund .refund-item .item-container .container-tag .tag-tip .tip-img i {
+              font-size: 15px; }
+              [data-dpr="2"] .refund .refund-item .item-container .container-tag .tag-tip .tip-img i {
+                font-size: 30px; }
+              [data-dpr="3"] .refund .refund-item .item-container .container-tag .tag-tip .tip-img i {
+                font-size: 45px; }
+            .refund .refund-item .item-container .container-tag .tag-tip .tip-img .fail-color {
+              color: #FA5F42; }
+            .refund .refund-item .item-container .container-tag .tag-tip .tip-img .succus-color {
+              color: #42D167; }
+            .refund .refund-item .item-container .container-tag .tag-tip .tip-img .hint-color {
+              color: #FFAA5C; }
+          .refund .refund-item .item-container .container-tag .tag-tip .tip-text {
+            margin-left: 0.1333333333rem;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333; }
+            [data-dpr="2"] .refund .refund-item .item-container .container-tag .tag-tip .tip-text {
+              font-size: 28px; }
+            [data-dpr="3"] .refund .refund-item .item-container .container-tag .tag-tip .tip-text {
+              font-size: 42px; }
+        .refund .refund-item .item-container .container-tag .tag-btn {
+          display: flex;
+          display: -webkit-box;
+          display: -webkit-flex;
+          align-items: center;
+          align-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -webkit-align-content: center; }
+          .refund .refund-item .item-container .container-tag .tag-btn .btn-img {
+            width: 0.5333333333rem; }
+            .refund .refund-item .item-container .container-tag .tag-btn .btn-img i {
+              font-size: 12px;
+              color: #CCCCCC; }
+              [data-dpr="2"] .refund .refund-item .item-container .container-tag .tag-btn .btn-img i {
+                font-size: 24px; }
+              [data-dpr="3"] .refund .refund-item .item-container .container-tag .tag-btn .btn-img i {
+                font-size: 36px; }
+          .refund .refund-item .item-container .container-tag .tag-btn .btn-text {
+            margin-right: 0.2rem;
+            font-size: 16px;
+            font-weight: 500;
+            color: #FB9C27; }
+            [data-dpr="2"] .refund .refund-item .item-container .container-tag .tag-btn .btn-text {
+              font-size: 32px; }
+            [data-dpr="3"] .refund .refund-item .item-container .container-tag .tag-btn .btn-text {
+              font-size: 48px; }
+
+/*# sourceMappingURL=recent-wait-refund.css.map */

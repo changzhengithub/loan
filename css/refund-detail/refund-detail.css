@@ -1,0 +1,177 @@
+@charset "UTF-8";
+/*
+项目采用采用淘宝flexible.js来进行页面适配，flexible.js会根据手机的dpr来配置页面跟元素的字体大小，然后采用rem来进行适配。
+根据设计图的十分之一来确定元素为多少rem     x  =  量取实际尺寸 / 页面宽度的十分之一  *  1rem
+$unit设置为设计图的十分之一，宽高通过设计图的实际宽高除以 $unit * 1rem计算出为多少REM,
+这样无论屏幕怎么变化只需得到HTML的font-size值(flexible会自动变换fontsize值)乘以REM就是变化后的宽高；
+ flexible根据dpr的不同来设置字体大小，引入时传入1dpr的字体大小，设计图大小 / 2
+*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+ol,
+ul,
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: none; }
+
+button,
+input {
+  outline: none;
+  border: none;
+  background: none; }
+
+[v-cloak] {
+  display: none; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+.refund-detail {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 1.6rem;
+  background: #F0F0F0; }
+  .refund-detail .detail-card {
+    width: 100%;
+    margin-bottom: 0.4rem;
+    background-color: #ffffff; }
+    .refund-detail .detail-card .card-title {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      align-items: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -webkit-align-content: center;
+      width: 100%;
+      height: 1.3333333333rem;
+      padding-left: 0.4rem;
+      padding-right: 0.4rem;
+      font-size: 15px;
+      font-weight: 500;
+      color: #999;
+      border-bottom: 1px solid #E2E2E2; }
+      [data-dpr="2"] .refund-detail .detail-card .card-title {
+        font-size: 30px; }
+      [data-dpr="3"] .refund-detail .detail-card .card-title {
+        font-size: 45px; }
+    .refund-detail .detail-card .card-text {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      align-items: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -webkit-align-content: center;
+      width: 100%;
+      height: 1.6rem;
+      padding-left: 0.6rem;
+      padding-right: 0.6rem;
+      font-size: 17px;
+      font-weight: 500;
+      color: #333; }
+      [data-dpr="2"] .refund-detail .detail-card .card-text {
+        font-size: 34px; }
+      [data-dpr="3"] .refund-detail .detail-card .card-text {
+        font-size: 51px; }
+      .refund-detail .detail-card .card-text span:last-of-type {
+        margin-top: 0.08rem; }
+  .refund-detail .detail-list {
+    width: 100%;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    background-color: #ffffff; }
+    .refund-detail .detail-list .list-item {
+      display: flex;
+      display: -webkit-box;
+      display: -webkit-flex;
+      align-items: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -webkit-align-content: center;
+      justify-content: space-between;
+      -webkit-box-pack: space-between;
+      -webkit-justify-content: space-between;
+      width: 100%;
+      height: 0.8rem;
+      padding-left: 0.4rem;
+      padding-right: 0.4rem; }
+      .refund-detail .detail-list .list-item span:first-of-type {
+        font-size: 15px;
+        font-weight: 500;
+        color: #333; }
+        [data-dpr="2"] .refund-detail .detail-list .list-item span:first-of-type {
+          font-size: 30px; }
+        [data-dpr="3"] .refund-detail .detail-list .list-item span:first-of-type {
+          font-size: 45px; }
+      .refund-detail .detail-list .list-item span:last-of-type {
+        font-size: 13px;
+        font-weight: 500;
+        color: #999; }
+        [data-dpr="2"] .refund-detail .detail-list .list-item span:last-of-type {
+          font-size: 26px; }
+        [data-dpr="3"] .refund-detail .detail-list .list-item span:last-of-type {
+          font-size: 39px; }
+  .refund-detail .detail-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    align-items: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -webkit-align-content: center;
+    justify-content: space-between;
+    -webkit-box-pack: space-between;
+    -webkit-justify-content: space-between;
+    width: 100%;
+    height: 1.6rem;
+    padding-left: 0.4rem;
+    padding-right: 0.6rem;
+    background-color: #ffffff; }
+    .refund-detail .detail-fixed .fixed-info {
+      font-size: 14px;
+      font-weight: 500;
+      color: #FB9C27; }
+      [data-dpr="2"] .refund-detail .detail-fixed .fixed-info {
+        font-size: 28px; }
+      [data-dpr="3"] .refund-detail .detail-fixed .fixed-info {
+        font-size: 42px; }
+      .refund-detail .detail-fixed .fixed-info span:first-of-type {
+        font-size: 16px;
+        font-weight: 500;
+        color: #333; }
+        [data-dpr="2"] .refund-detail .detail-fixed .fixed-info span:first-of-type {
+          font-size: 32px; }
+        [data-dpr="3"] .refund-detail .detail-fixed .fixed-info span:first-of-type {
+          font-size: 48px; }
+    .refund-detail .detail-fixed .fixed-btn {
+      width: 2.9333333333rem;
+      height: 1.0666666667rem; }
+      .refund-detail .detail-fixed .fixed-btn .btn {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+        font-weight: 500;
+        color: #fff;
+        background: #FB9C27;
+        border-radius: 0.5333333333rem; }
+        [data-dpr="2"] .refund-detail .detail-fixed .fixed-btn .btn {
+          font-size: 36px; }
+        [data-dpr="3"] .refund-detail .detail-fixed .fixed-btn .btn {
+          font-size: 54px; }
+
+/*# sourceMappingURL=refund-detail.css.map */

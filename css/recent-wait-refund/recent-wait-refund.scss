@@ -1,0 +1,137 @@
+@import "../_flex.scss";
+@import "../_reset.scss";
+$unit: 75 !default;
+
+.refund {
+  // @include vertical_direction();
+  width: 100%;
+  height: 100%;
+  padding: {
+    top: 30 / $unit * 1rem;
+  }
+  padding: {
+    left: 20 / $unit * 1rem;
+    right: 20 / $unit * 1rem;
+  }
+  background: #FAFAFA;
+  .refund-item {
+    position: relative;
+    width: 100%;
+    height: 296 / $unit * 1rem;
+    margin: {
+      bottom: 30 / $unit * 1rem;
+    }
+    .item-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .item-container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      .container-info {
+        @include vertical_center_horizontal_between();
+        width: 100%;
+        height: 160 / $unit * 1rem;
+        padding: {
+          top: 20 / $unit * 1rem;
+          left: 50 / $unit * 1rem;
+          right: 40 / $unit * 1rem;
+        }
+        .info-leftside {
+          .leftside-title {
+            @include vertical_center();
+            height: 60 / $unit * 1rem;
+            @include font-dpr(15px);
+            font-weight: 700;
+            color: #333;
+          }
+          .leftside-time {
+            @include vertical_center();
+            height: 60 / $unit * 1rem;
+            @include font-dpr(12px);
+            font-weight: 500;
+            color: #999;
+            span:first-of-type {
+              margin: {
+                right: 10 / $unit * 1rem;
+              }
+            }
+          }
+        }
+        .info-rightside {
+          font-weight: 700;
+          color: #666;
+          span:first-of-type {
+            @include font-dpr(15px);
+          }
+          span:last-of-type {
+            @include font-dpr(30px);
+          }
+        }
+      }
+      .container-tag {
+        @include vertical_center_horizontal_between();
+        width: 100%;
+        height: 100 / $unit * 1rem;
+        padding: {
+          left: 45 / $unit * 1rem;
+          right: 35 / $unit * 1rem;
+        }
+        .tag-tip {
+          @include vertical_center();
+          .tip-img {
+            width: 40 / $unit * 1rem;
+            i {
+              @include font-dpr(15px);
+            }
+            .fail-color {
+              color: #FA5F42;
+            }
+            .succus-color {
+              color: #42D167;
+            }
+            .hint-color {
+              color: #FFAA5C;
+            }
+          }
+          .tip-text {
+            margin: {
+              left: 10 / $unit * 1rem;
+            }
+            @include font-dpr(14px);
+            font-weight: 500;
+            color: #333;
+          }
+        }
+        .tag-btn {
+          @include vertical_center();
+          .btn-img {
+            width: 40 / $unit * 1rem;
+            i {
+              @include font-dpr(12px);
+              color: #CCCCCC;
+            }
+          }
+          .btn-text {
+            margin: {
+              right: 15 / $unit * 1rem;
+            }
+            @include font-dpr(16px);
+            font-weight: 500;
+            color: #FB9C27;
+          }
+        }
+      }
+    }
+  }
+}

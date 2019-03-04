@@ -51,6 +51,18 @@ function checkPassword(password) {
     return true
 }
 
+//验证银行卡号
+ function checkBankNo(card) {
+  card = card ? card.replace(/\s+/g, '') : card
+  if (!card) {
+    alertMsg('银行卡号不能为空')
+    return false
+  } else {
+    return true
+  }
+ }
+
+
 // 跳转到新页面
 function gotoPage(page) {
   // api.closeFrame({

@@ -1,0 +1,113 @@
+@import "../_flex.scss";
+@import "../_reset.scss";
+$unit: 75 !default;
+
+.refund-detail {
+  width: 100%;
+  height: 100%;
+  padding: {
+    bottom: 120 / $unit * 1rem;
+  }
+  background: #F0F0F0;
+  .detail-card {
+    width: 100%;
+    margin: {
+      bottom: 30 / $unit * 1rem;
+    }
+    background-color: #ffffff;
+    .card-title {
+      @include vertical_center();
+      width: 100%;
+      height: 100 / $unit * 1rem;
+      padding: {
+        left: 30 / $unit * 1rem;
+        right: 30 / $unit * 1rem;
+      }
+      @include font-dpr(15px);
+      font-weight: 500;
+      color: #999;
+      border-bottom: 1px solid #E2E2E2;
+    }
+    .card-text {
+      @include vertical_center();
+      width: 100%;
+      height: 120 / $unit * 1rem;
+      padding: {
+        left: 45 / $unit * 1rem;
+        right: 45 / $unit * 1rem;
+      }
+      @include font-dpr(17px);
+      font-weight: 500;
+      color: #333;
+      span:last-of-type {
+        margin-top: 6 / $unit * 1rem;
+      }
+    }
+  }
+  .detail-list {
+    width: 100%;
+    padding: {
+      top: 15 / $unit * 1rem;
+      bottom: 15 / $unit * 1rem;
+    }
+    background-color: #ffffff;
+    .list-item {
+      @include  vertical_center_horizontal_between();
+      width: 100%;
+      height: 60 / $unit * 1rem;
+      padding: {
+        left: 30 / $unit * 1rem;
+        right: 30 / $unit * 1rem;
+      }
+      span:first-of-type {
+        @include font-dpr(15px);
+        font-weight: 500;
+        color: #333;
+      }
+      span:last-of-type {
+        @include font-dpr(13px);
+        font-weight: 500;
+        color: #999;
+      }
+    }
+  }
+
+  .detail-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    @include vertical_center_horizontal_between();
+    width: 100%;
+    height: 120 / $unit * 1rem;
+    padding: {
+      left: 30 / $unit * 1rem;
+      right: 45 / $unit * 1rem;
+    }
+    background-color: #ffffff;
+    .fixed-info {
+      @include font-dpr(14px);
+      font-weight: 500;
+      color: #FB9C27;
+      span:first-of-type {
+        @include font-dpr(16px);
+        font-weight: 500;
+        color: #333;
+      }
+    }
+    .fixed-btn {
+      width: 220 / $unit * 1rem;
+      height: 80 / $unit * 1rem;
+
+      .btn {
+        width: 100%;
+        height: 100%;
+        @include font-dpr(18px);
+        font-weight: 500;
+        color: #fff;
+        background: #FB9C27;
+        border-radius: 40 / $unit * 1rem;
+      }
+    }
+  }
+}

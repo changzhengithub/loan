@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <script type="text/javascript" charset="utf-8" src="../../script/flexible.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../../script/api.js"></script>
+    <title>近期待还</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" href="../../css/recent-wait-refund/recent-wait-refund.css">
+    <link rel="stylesheet" href="../../iconfont/iconfont.css">
+</head>
+
+<body>
+  <section id="refund" class="refund">
+    <div class="refund-item">
+      <div class="item-bg">
+        <img src="../../image/floor.png">
+      </div>
+      <div class="item-container">
+        <div class="container-info">
+          <div class="info-leftside">
+            <p class="leftside-title">待还款金额(元)</p>
+            <p class="leftside-time">
+              <span>还款日期</span>
+              <span>2019/2/30</span>
+            </p>
+          </div>
+          <div class="info-rightside"><span>￥</span><span>1500</span></div>
+        </div>
+        <div class="container-tag">
+          <div class="tag-tip">
+            <div class="tip-img">
+              <i class="iconfont icon-tishi1 hint-color"></i>
+            </div>
+            <p class="tip-text">7天后到期</p>
+          </div>
+          <div class="tag-btn" onclick="javascript: gotoPage('refund-detail');">
+            <p class="btn-text">立即还款</p>
+            <div class="btn-img">
+              <i class="iconfont icon-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+    <script src="../../script/check.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      apiready = function() {
+      }
+    </script>
+</body>
+
+</html>
